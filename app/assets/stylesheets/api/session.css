@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo-img{
+    max-width: 50px;
+    max-height: 50px;
+}
+.logo{
+    padding-left: 6px;
+}
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    background-image: url(https://a.slack-edge.com/80588/spacesuit/source/images/backgrounds/bg-halftone-black-20p.png);
+
+}
+
+.btn {
+    margin: 20px;
+    text-decoration: none;
+}
+
+.seshbuttons{
+    padding-top: 20px;
+
+}
+
+.signupbutton {
+    border: 1px solid #611f69;
+    background-color: #611f69;
+    border-radius: 5px;
+    color: white;
+    padding: 15px;
+
+}
+
+.loginbutton {
+    color: black;
+
+}
