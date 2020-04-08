@@ -17,6 +17,10 @@ const NavBarComponent = ({ currentUser, logout }) => {
     return (
         <header className="nav-bar">
             <h1 className="logo">Scoop</h1>
+            <img
+                src={logoURL}
+                className="logo-img"
+            />
             <div className="seshlinks">
                 {display}
             </div>
@@ -24,3 +28,4 @@ const NavBarComponent = ({ currentUser, logout }) => {
     );
 };
 export default NavBarComponent;
+
