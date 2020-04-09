@@ -9,18 +9,20 @@ const NavBarComponent = ({ currentUser, logout }) => {
         </div>
     ) : (
             <div className="seshbuttons">
-                <Link className="btn loginbutton" to="/login">Log In</Link>
-                <Link className="btn signupbutton" to="/signup">Sign Up</Link>
+                <Link className="btn loginbutton" to="/login">Sign in</Link>
+                <Link className="btn signupbutton" to="/signup">Get Started</Link>
             </div>
         );
 
     return (
         <header className="nav-bar">
-            <h1 className="logo">Scoop</h1>
-            <img
-                src={logoURL}
-                className="logo-img"
-            />
+            <Link to="/" className="nav-main-link">
+                <img
+                    src={logoURL}
+                    className="logo-img"
+                />
+                <h1 className="logo">Scoop</h1>
+            </Link>
             <div className="seshlinks">
                 {display}
             </div>
