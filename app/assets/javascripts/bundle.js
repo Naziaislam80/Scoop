@@ -592,14 +592,12 @@ var LogInForm = /*#__PURE__*/function (_React$Component) {
       }, "Enter your email and password."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input",
         type: "email",
-        required: true,
         value: this.state.email,
         placeholder: "Email",
         onChange: this.handleInput('email')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input",
         type: "password",
-        required: true,
         placeholder: "Password",
         value: this.state.password,
         onChange: this.handleInput('password')
@@ -757,14 +755,12 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input",
         type: "email",
-        required: true,
         value: this.state.email,
         placeholder: "Email",
         onChange: this.handleInput('email')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input",
         type: "password",
-        required: true,
         value: this.state.password,
         placeholder: "Password",
         onChange: this.handleInput('password')

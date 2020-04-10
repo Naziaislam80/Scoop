@@ -70,7 +70,6 @@ class LogInForm extends React.Component {
                     <input
                             className="login-input"
                             type='email'
-                            required
                             value={this.state.email}
                             placeholder="Email"
                             onChange={this.handleInput('email')}
@@ -80,7 +79,6 @@ class LogInForm extends React.Component {
                     <input
                             className="login-input"
                             type='password'
-                            required
                             placeholder="Password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
