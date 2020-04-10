@@ -41,24 +41,30 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         let errors = null;
-        if (this.props.errors) {
+        if (this.props.errors.length > 0) {
             errors = (
-                <ul className="errors-list">
-                    {this.props.errors.map((error, i) => {
-                        return <li key={`error-${i}`}>{error}</li>;
-                    })}
-                </ul>
+                <div className="error-msg">
+                        <img
+                            src={errorURL}
+                            className="error-img" />
+                    <ul className="errors-list">
+                        {this.props.errors.map((error, i) => {
+                            return <li key={`error-${i}`}>{error}</li>;
+                        })}
+                    </ul>
+                </div>
             );
         }
         return errors;
     }
     render() {
+
         return (
             
             <div className='session-form'>
                 <div className="outer-form-div"></div>
-                <h2 className="form-title-name">Signup</h2>
-                <h2 className="title">Enter email, username and password.</h2>
+                <h2 className="form-title-name">First, enter your email, username, and choose a password.</h2>
+                <h2 className="title">Dont worry, confirmation email is not needed.</h2>
                 <form>
                     <label>
                     <input
@@ -72,7 +78,8 @@ class SessionForm extends React.Component {
                     <label>
                     <input
                             className="login-input"
-                            type='text'
+                            type='email'
+                            required
                             value={this.state.email}
                             placeholder="Email"
                             onChange={this.handleInput('email')}
@@ -82,18 +89,24 @@ class SessionForm extends React.Component {
                     <input
                             className="login-input"
                             type='password'
+                            required
                             value={this.state.password}
                             placeholder="Password"
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button className="login-button" onClick={this.handleSubmit}>Sign Up</button>
+                    {this.renderErrors()}
+                    <button className="login-button" onClick={this.handleSubmit}>Confirm</button>
                 </form>
                 <div className="demo">
                     <p>
                         Try out Scoop as a&nbsp;
                         <Link to="/dashboard" className="demo-link" onClick={this.loginDemo}>
                             Demo User
+                            <img
+                                src={signupURL}
+                                className="signup-img"
+                            />
                         </Link>
                     </p>
                 </div>

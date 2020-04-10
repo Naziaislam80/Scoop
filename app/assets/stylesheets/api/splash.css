@@ -1,0 +1,45 @@
+.homepage-baby-div {
+    min-height: 400px;
+    padding-left: 8%;
+    padding-top: 100px;
+   justify-content: space-between;
+    margin-top: 50px;
+}
+
+.homepage-main-text{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--theme-text);
+    margin-right: 10px;
+    margin-bottom: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: var(--theme-text);
+    font-weight: 700;
+    width: 100%;
+}
+
+.homepage-p-text {
+    margin: 0, 0, 8px;
+    font-size: 50 px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 1.1875;
+    letter-spacing: -.8px;
+    box-sizing: inherit;
+    display: block;
+    text-align: left;
+    width: 50%;
+
+}
+
+.main-img {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-sizing: inherit;
+
+}
