@@ -1,43 +1,57 @@
 .homepage-baby-div {
     min-height: 400px;
-    padding-left: 8%;
-    padding-top: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
    justify-content: space-between;
     margin-top: 50px;
+    display: flex;
 }
 
 .homepage-main-text{
     text-align: left;
     font-size: 14px;
     font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     color: var(--theme-text);
     margin-right: 10px;
-    margin-bottom: 0;
+    margin: 0px 0px 16px;
     display: inline-block;
     white-space: nowrap;
     color: var(--theme-text);
     font-weight: 700;
-    width: 100%;
+    width: 50%;
 }
 
 .homepage-p-text {
-    margin: 0, 0, 8px;
-    font-size: 50 px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 43px;
+    font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     font-weight: 700;
-    line-height: 1.1875;
+    margin-right: 0;
     letter-spacing: -.8px;
+    line-height: 1.1875;
+    
     box-sizing: inherit;
     display: block;
-    text-align: left;
-    width: 50%;
+    margin-bottom: 1rem;
 
+}
+
+.homepage-text{
+    text-align: left;
+    width: 100%;
+    min-height: 50px;
+    max-width: 380px;
+    font-size: 16px;
+    position:relative;
+    z-index: 2;
+    font-weight: 500;
+    
 }
 
 .main-img {
     margin-left: 0;
-    width: 100%;
+    width: 60%;
     max-width: 100%;
     height: auto;
     box-sizing: inherit;
@@ -73,3 +87,71 @@ a:hover{
     cursor: pointer;
 }
 
+.splash.section-3 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 110px;
+    margin-left: 100px;
+    padding-bottom: 100px;
+}
+
+.splash3-content {
+    text-align: left;
+    width: 50%;
+}
+
+.splash3-content h2 {
+    font-size: 45px;
+}
+.video2-tag {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.splash3-content p {
+    font-size: 18px;
+}
+
+.square-img, .news-img, .hand-img{
+    width: 45px;
+}
+
+.break-text{
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -.8px;
+    padding-bottom: 18px;
+}
+
+.working-text{
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: -.2px;
+    font-size: 1rem;
+    padding-bottom: 30px;
+}
+
+.slackvid{
+    box-shadow: 0 0 1.5rem rgba(105,105,105,.5);
+    width: 700px;
+    min-height: 400px;
+}
+
+.features-div{
+    margin: 1rem ;
+}
+
+.homepage-link {   
+    background-color: #611f69;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 19px 40px 20px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: white;
+    border: 1px solid #611f69;
+    position:relative;
+    z-index: 2;
+}

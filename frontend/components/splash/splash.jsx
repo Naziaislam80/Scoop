@@ -21,12 +21,13 @@ class SplashContainer extends React.Component {
             
         <div className="homepage-whole-div">
             <div className="homepage-baby-div">
-                <h1 className="homepage-main-text">
+                <div className="homepage-header">
+                    <h1 className="homepage-main-text">
                     WORK FROM HOME
-              </h1>
-                <p className="homepage-p-text">
+                    </h1>
+                    <p className="homepage-p-text">
                     Scoop brings the team together, wherever you are
-              </p>
+                </p>
                 <p className="homepage-text">
                     With all of your communication and tools in one place, remote teams will stay productive
                     no matter where you are working from. 
@@ -40,6 +41,7 @@ class SplashContainer extends React.Component {
                 </a>
                 </ul>
                 <span className="already">Already a member of Scoop? <Link className="already-link" to='login'>Sign in</Link>.</span>
+            </div>
                 <img
                     src={mainURL}
                     className="main-img"
@@ -54,7 +56,7 @@ class SplashContainer extends React.Component {
                 <iframe
                 width="560" 
                 height="315"
-                src="https://www.youtube.com/embed/EYqxQGmQkVw"
+                    src="https://www.youtube.com/embed/FhW01ljEVH4"
                 
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -98,10 +100,38 @@ class SplashContainer extends React.Component {
                             most important — and which can wait.
                 </p>
                     </div>
+                    <section className='splash section-3'>
+                        <div className='div3 first'>
+                            <div className="splash3-content first">
+                                <h2>Make the change to channels</h2>
+                                <p>
+                                    Productive teamwork happens in channels
+                                    — organized spaces for everything
+                                    related to a project, topic or team.
+                            </p>
+                            </div>
+                            <video className='video1-tag' autoPlay loop muted>
+                                <source src={video1URL} type='video/mp4' />
+                            </video>
+                        </div>
+                        <div className='div3 second'>
+                            <video className='video2-tag' autoPlay loop muted>
+                                <source src={video2URL} type='video/mp4' />
+                            </video>
+                            <div className="splash3-content second">
+                                <h2>Shared channels bring companies together</h2>
+                                <p>
+                                    Now channels can help you work as closely
+                                    with external partners and clients as you
+                                    do with teams down the hall.
+                            </p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
                 <footer className="homepage-4-div">
                     <a
-                        href="https://github.com/Naziaislam80"
+                        href=""
                         className="github-link"
                         target="_blank"
                     >
