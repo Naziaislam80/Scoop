@@ -60,6 +60,7 @@ class LogInForm extends React.Component {
     }
     render() {
         return (
+        <>
             <div className='login-form'>
                 <div className="outer-form-div"></div>
                 <h2 className="form-title-name">Sign in to your workspace</h2>
@@ -97,8 +98,33 @@ class LogInForm extends React.Component {
                         </Link>
                     </p>
                 </div>
+                
 
             </div>
+            <footer className="homepage-4-div">
+                <a
+                    href="https://github.com/Naziaislam80"
+                    className="github-link"
+                    target="_blank"
+                >
+                    <img
+                        src="https://image.flaticon.com/icons/svg/2111/2111432.svg"
+                        className="github-img"
+                    />
+                </a>
+
+                <a
+                    href=""
+                    className="linkedin-link"
+                    target="_blank"
+                >
+                    <img
+                        src="https://image.flaticon.com/icons/svg/174/174857.svg"
+                        className="linkedin-img"
+                    />
+                </a>
+            </footer>
+            </>
             
         );
 

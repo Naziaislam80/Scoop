@@ -77,20 +77,23 @@ body {
 }
 
 .login-form {
-    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    box-shadow: 0 10px 25px #ddd;
+    font-family: 'Lato', sans-serif;
+    border-radius: 10px;
     text-align: center;
-    border: 1px solid lightgrey;
-    background-color: white;
-    width: 30%;
-    height: 50%;
-    padding: 6%;
-    border-radius: 5px;
-    padding: 32px;
-    box-shadow: 0 1px 0 rgba(77, 75, 75, 0.25);
+    max-width: 414px;
+    max-height: 635px;
     position: relative;
-    margin-top: 250px;
+    
 }
-
 .login-input{
     border: 1px solid black;
     width: 100%;
@@ -113,7 +116,7 @@ body {
 
 
 .form-title-name{
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 20px;
@@ -127,6 +130,7 @@ body {
 
 .title {
     height: 100%;
+    font-family: 'Lato', sans-serif
     
 }
 
@@ -151,7 +155,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    box-shadow: 0 1px 0 rgba(77, 75, 75, 0.25);
+    box-shadow: 0 10px 25px #ddd;
     border-radius: 4px;
     padding: 32px;
     position: relative;

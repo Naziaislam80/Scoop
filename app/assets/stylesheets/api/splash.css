@@ -43,3 +43,33 @@
     box-sizing: inherit;
 
 }
+
+.homepage-4-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid lightgrey;
+    min-height: 100px;
+    margin-top: 300px;
+}
+
+.github-img, .linkedin-img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.linkedin-img{
+     width: 30px;
+    height: 30px;
+}
+
+.github-link:hover, .linkedin-link:hover{
+    background-color: #1264a3;
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}
+

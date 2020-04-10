@@ -60,11 +60,11 @@ class SessionForm extends React.Component {
     render() {
 
         return (
-            
+           <> 
             <div className='session-form'>
                 <div className="outer-form-div"></div>
-                <h2 className="form-title-name">First, enter your email, username, and choose a password.</h2>
-                <h2 className="title">Dont worry, confirmation email is not needed.</h2>
+                <h2 className="form-title-name">First, enter your email, then choose a username and password.</h2>
+                <h2 className="title">Dont worry, a confirmation email isn't necessary.</h2>
                 <form>
                     <label>
                     <input
@@ -109,6 +109,30 @@ class SessionForm extends React.Component {
                     </p>
                 </div>
             </div>
+            <footer className="homepage-4-div">
+                <a
+                    href="https://github.com/Naziaislam80"
+                    className="github-link"
+                    target="_blank"
+                >
+                    <img
+                        src="https://image.flaticon.com/icons/svg/2111/2111432.svg"
+                        className="github-img"
+                    />
+                </a>
+
+                <a
+                    href=""
+                    className="linkedin-link"
+                    target="_blank"
+                >
+                    <img
+                        src="https://image.flaticon.com/icons/svg/174/174857.svg"
+                        className="linkedin-img"
+                    />
+                </a>
+            </footer>
+            </>
         );
 
     }
