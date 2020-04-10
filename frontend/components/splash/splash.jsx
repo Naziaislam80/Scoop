@@ -72,7 +72,7 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Conversations, organized</h3>
                         <p>
-                            Instead of a single overstuffed inbox, conversations in Slack
+                            Instead of a single overstuffed inbox, conversations in Scoop
                             happen in dedicated spaces called channels.
                 </p>
                     </div>
@@ -83,7 +83,7 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Get looped in, not out</h3>
                         <p>
-                            Slack makes it simple to follow conversations or find important
+                            Scoop makes it simple to follow conversations or find important
                             information in an easily searchable archive.
                 </p>
                     </div>
@@ -94,7 +94,7 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Give focus a chance</h3>
                         <p>
-                            Unlike email, Slack lets you choose which conversations are
+                            Unlike email, Scoop lets you choose which conversations are
                             most important — and which can wait.
                 </p>
                     </div>
