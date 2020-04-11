@@ -6,6 +6,11 @@
    justify-content: space-between;
     margin-top: 50px;
     display: flex;
+
+}
+
+.homepage-baby-div:last-child{
+    margin-top: -30px;
 }
 
 .homepage-main-text{
@@ -34,6 +39,8 @@
     box-sizing: inherit;
     display: block;
     margin-bottom: 1rem;
+    z-index: 1;
+    max-width: 420px;
 
 }
 
@@ -50,12 +57,16 @@
 }
 
 .main-img {
-    margin-left: 0;
-    width: 60%;
-    max-width: 100%;
+    margin-left: -126px;
+    width: 125%;
+    /* max-width: 100%; */
     height: auto;
     box-sizing: inherit;
+    margin-top: -80px;
+}
 
+.main-img-container {
+    width: 50vw;
 }
 
 .homepage-4-div{
@@ -66,6 +77,14 @@
     border-top: 1px solid lightgrey;
     min-height: 100px;
     margin-top: 300px;
+}
+.homepage-3-div{
+    display: flex;
+    padding: 0px 10px;
+    margin: 20px;
+    justify-content: space-evenly;
+    line-height: 29px;
+    font-size: 18px;
 }
 
 .github-img, .linkedin-img{
@@ -98,15 +117,18 @@ a:hover{
 .splash3-content {
     text-align: left;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .splash3-content h2 {
     font-size: 45px;
 }
 .video2-tag {
+    width: 45%;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
 }
 
 .splash3-content p {
@@ -118,11 +140,12 @@ a:hover{
 }
 
 .break-text{
-    font-size: 45px;
     font-weight: 900;
     line-height: 1.12;
-    letter-spacing: -.8px;
     padding-bottom: 18px;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 0.3px;
 }
 
 .working-text{
@@ -131,19 +154,24 @@ a:hover{
     letter-spacing: -.2px;
     font-size: 1rem;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .slackvid{
     box-shadow: 0 0 1.5rem rgba(105,105,105,.5);
-    width: 700px;
-    min-height: 400px;
+    width: 75%;
+    margin: 0 auto;
+    min-height: 587px;
 }
 
 .features-div{
-    margin: 1rem ;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
 
-.homepage-link {   
+.try-scoop-link {   
     background-color: #611f69;
     font-size: 16px;
     font-weight: bold;
@@ -154,4 +182,100 @@ a:hover{
     border: 1px solid #611f69;
     position:relative;
     z-index: 2;
+}
+
+.try-scoop:hover {
+    background-color: #4a154b;
+}
+
+.try-demo-link{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 19px 40px 20px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: #611f69;
+    border: 1px solid #611f69;
+    position:relative;
+    z-index: 2;
+}
+
+.try-demo-link:hover{
+    border: 2px solid #611f69;
+    border-radius: 4px;
+}
+
+.video-container {
+    width: 100vw;
+    display: flex
+}
+
+.homepage-5{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -8%;
+}
+
+.div3 {
+    display: flex;
+}
+
+.video1-tag {
+    width: 60%;
+}
+
+.splash.section-4 {
+    display: flex;
+    flex-direction: row;
+}
+
+.portfolio{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+.homepage-7-div{
+    display: flex;
+    background-color: #4a154b;
+    background-image: url(https://a.slack-edge.com/80588/spacesuit/source/images/backgrounds/bg-halftone-black-20p.png);
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.better-text{
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.try-c-link-bottom{
+    background-color: white;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 19px 40px 20px;
+    color: #611f69;
+    border: 1px solid #611f69;
+}
+
+.try-demo-link-bottom{
+    background-color: #611f69;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 19px 40px 20px;
+    color: white;
+    border: 1px solid white;
+}
+
+.homepage-header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }

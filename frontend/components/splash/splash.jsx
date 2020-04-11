@@ -6,16 +6,17 @@ class SplashContainer extends React.Component {
         this.loginDemo = this.loginDemo.bind(this)
     }
 
-    loginDemo() {
+    loginDemo(e) {
+        e.preventDefault();
         const demo = {
-            email: 'demo@scoop.com',
-            password: 'winner1'
+
+            email: 'test@aol.com',
+            password: 'password'
         }
 
-        this.props.login(demo).then(
-            () => this.props.history.push('/home')
-        );
+        this.props.login(demo)
     };
+
     render() {
         return (
             
@@ -36,16 +37,18 @@ class SplashContainer extends React.Component {
                     <Link className="try-scoop-link" to="/signup">
                         TRY SCOOP
                 </Link>
-                    <a className="try-demo-link" onClick={this.handleDemoUser}>
+                    <a className="try-demo-link" onClick={this.loginDemo}>
                         TRY DEMO
-                </a>
+                    </a>
                 </ul>
-                <span className="already">Already a member of Scoop? <Link className="already-link" to='login'>Sign in</Link>.</span>
+                <span className="already">Already a member of Scoop? <Link className="already-link" to='/login'>Sign in</Link>.</span>
             </div>
+                <div className="main-img-container">
                 <img
                     src={mainURL}
                     className="main-img"
                 />
+                </div>
             </div>
             <div className="homepage-2-div">
                 <h2 className="break-text">Break out of the inbox</h2>
@@ -53,9 +56,8 @@ class SplashContainer extends React.Component {
                     Working in channels gives everyone on your team a shared view of
                     progress and purpose.
                 </p>
+                <div className="video-container">
                 <iframe
-                width="560" 
-                height="315"
                     src="https://www.youtube.com/embed/FhW01ljEVH4"
                 
                 frameBorder="0"
@@ -64,6 +66,7 @@ class SplashContainer extends React.Component {
                 title="slackvideo"
                 className="slackvid"
                 />
+                </div>
 
             </div>
                 <div className="homepage-3-div">
@@ -76,7 +79,7 @@ class SplashContainer extends React.Component {
                         <p>
                             Instead of a single overstuffed inbox, conversations in Scoop
                             happen in dedicated spaces called channels.
-                </p>
+                        </p>
                     </div>
                     <div className="features-div">
                         <img
@@ -87,7 +90,7 @@ class SplashContainer extends React.Component {
                         <p>
                             Scoop makes it simple to follow conversations or find important
                             information in an easily searchable archive.
-                </p>
+                        </p>
                     </div>
                     <div className="features-div">
                         <img
@@ -98,8 +101,10 @@ class SplashContainer extends React.Component {
                         <p>
                             Unlike email, Scoop lets you choose which conversations are
                             most important — and which can wait.
-                </p>
+                        </p>
                     </div>
+                </div>
+                <div className="homepage-5">
                     <section className='splash section-3'>
                         <div className='div3 first'>
                             <div className="splash3-content first">
@@ -114,6 +119,10 @@ class SplashContainer extends React.Component {
                                 <source src={video1URL} type='video/mp4' />
                             </video>
                         </div>
+                    </section>
+                </div>
+                <div className="homepage-6">
+                    <section className='splash section-4'>
                         <div className='div3 second'>
                             <video className='video2-tag' autoPlay loop muted>
                                 <source src={video2URL} type='video/mp4' />
@@ -129,6 +138,20 @@ class SplashContainer extends React.Component {
                         </div>
                     </section>
                 </div>
+                <div className="homepage-7-div">
+                    <p className="better-text">Choose a better way to work</p>
+                    <ul className="homepage-link">
+                        <Link className="try-c-link-bottom" to="/signup">
+                            TRY SCOOP
+                        </Link>
+                        <a
+                            className="try-demo-link-bottom"
+                            onClick={this.loginDemo}
+                        >
+                            TRY DEMO
+                        </a>
+                    </ul>
+                </div>
                 <footer className="homepage-4-div">
                     <a
                         href=""
@@ -139,6 +162,13 @@ class SplashContainer extends React.Component {
                             src="https://image.flaticon.com/icons/svg/2111/2111432.svg"
                             className="github-img"
                         />
+                    </a>
+                    <a
+                        href=""
+                        className="portfolio"
+                        target="_blank"
+                    >
+                        About Me
                     </a>
 
                     <a

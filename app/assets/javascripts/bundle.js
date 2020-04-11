@@ -1006,16 +1006,13 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
 
   _createClass(SplashContainer, [{
     key: "loginDemo",
-    value: function loginDemo() {
-      var _this2 = this;
-
+    value: function loginDemo(e) {
+      e.preventDefault();
       var demo = {
-        email: 'demo@scoop.com',
-        password: 'winner1'
+        email: 'test@aol.com',
+        password: 'password'
       };
-      this.props.login(demo).then(function () {
-        return _this2.props.history.push('/home');
-      });
+      this.props.login(demo);
     }
   }, {
     key: "render",
@@ -1039,31 +1036,33 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
         to: "/signup"
       }, "TRY SCOOP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "try-demo-link",
-        onClick: this.handleDemoUser
+        onClick: this.loginDemo
       }, "TRY DEMO")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "already"
       }, "Already a member of Scoop? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "already-link",
-        to: "login"
-      }, "Sign in"), ".")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        to: "/login"
+      }, "Sign in"), ".")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-img-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: mainURL,
         className: "main-img"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homepage-2-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "break-text"
       }, "Break out of the inbox"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "working-text"
-      }, "Working in channels gives everyone on your team a shared view of progress and purpose."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-        width: "560",
-        height: "315",
+      }, "Working in channels gives everyone on your team a shared view of progress and purpose."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
         src: "https://www.youtube.com/embed/FhW01ljEVH4",
         frameBorder: "0",
         allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
         allowFullScreen: true,
         title: "slackvideo",
         className: "slackvid"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homepage-3-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "features-div"
@@ -1080,7 +1079,9 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://image.flaticon.com/icons/svg/651/651781.svg",
         className: "hand-img"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Give focus a chance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Unlike email, Scoop lets you choose which conversations are most important \u2014 and which can wait.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Give focus a chance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Unlike email, Scoop lets you choose which conversations are most important \u2014 and which can wait."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "homepage-5"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "splash section-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "div3 first"
@@ -1094,7 +1095,11 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
         src: video1URL,
         type: "video/mp4"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "homepage-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "splash section-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "div3 second"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         className: "video2-tag",
@@ -1106,7 +1111,19 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
         type: "video/mp4"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash3-content second"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Shared channels bring companies together"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Now channels can help you work as closely with external partners and clients as you do with teams down the hall."))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Shared channels bring companies together"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Now channels can help you work as closely with external partners and clients as you do with teams down the hall."))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "homepage-7-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "better-text"
+      }, "Choose a better way to work"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "homepage-link"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "try-c-link-bottom",
+        to: "/signup"
+      }, "TRY SCOOP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "try-demo-link-bottom",
+        onClick: this.loginDemo
+      }, "TRY DEMO"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
         className: "homepage-4-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
@@ -1116,6 +1133,10 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
         src: "https://image.flaticon.com/icons/svg/2111/2111432.svg",
         className: "github-img"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "",
+        className: "portfolio",
+        target: "_blank"
+      }, "About Me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
         className: "linkedin-link",
         target: "_blank"
