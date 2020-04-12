@@ -63,7 +63,7 @@
     width: 125%;
     height: auto;
     box-sizing: inherit;
-    margin-top: -60px;
+    margin-top: -35px;
 }
 
 .main-img-container {
@@ -319,8 +319,9 @@ a:hover{
 .homepage-header {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+        padding-top: 80px;
     padding-left: 35px;
+
 }
 
 

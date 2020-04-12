@@ -26,6 +26,7 @@ const NavBarComponent = ({ currentUser, logout }) => {
             <div className="seshlinks">
                 {display}
             </div>
+            
         </header>
     );
 };

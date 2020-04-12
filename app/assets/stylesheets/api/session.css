@@ -92,7 +92,6 @@ body {
 }
 
 .login-form {
-    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -108,6 +107,8 @@ body {
     max-width: 414px;
     max-height: 635px;
     position: relative;
+    margin-top: 135px;
+    margin-bottom: 300px;
     
 }
 .login-input{
@@ -174,8 +175,9 @@ body {
     border-radius: 4px;
     padding: 32px;
     position: relative;
-    margin-top: 50px;
-     border: 1px solid lightgrey;
+    border: 1px solid lightgrey;
+    margin-top: 135px;
+    margin-bottom: 200px;
 
 
 }
@@ -232,4 +234,16 @@ body {
     height: 25px;
     margin-left: 0;
     width: 10%;
+}
+
+.login-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.signup-page {
+     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }

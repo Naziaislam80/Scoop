@@ -61,6 +61,7 @@ class LogInForm extends React.Component {
     render() {
         return (
         <>
+        <div className="login-page">
             <div className='login-form'>
                 <div className="outer-form-div"></div>
                 <h2 className="form-title-name">Sign in to your workspace</h2>
@@ -131,6 +132,7 @@ class LogInForm extends React.Component {
                     />
                 </a>
             </footer>
+            </div>
             </>
             
         );

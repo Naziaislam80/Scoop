@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
     render() {
 
         return (
-           <> 
+           <div className="signup-page"> 
             <div className='session-form'>
                 <div className="outer-form-div"></div>
                 <h2 className="form-title-name">First, enter your email, then choose a username and password.</h2>
@@ -139,7 +139,7 @@ class SessionForm extends React.Component {
                     />
                 </a>
             </footer>
-            </>
+            </div>
         );
 
     }
