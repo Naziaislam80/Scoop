@@ -41,7 +41,7 @@ class SplashContainer extends React.Component {
                         TRY DEMO
                     </a>
                 </ul>
-                <span className="already">Already a member of Scoop? <Link className="already-link" to='/login'>Sign in</Link>.</span>
+                    <span className="already">Need to create a workspace? <Link className="already-link" to='/login'>Get started</Link>.</span>
             </div>
                 <div className="main-img-container">
                 <img
@@ -111,8 +111,8 @@ class SplashContainer extends React.Component {
                                 <h2>Make the change to channels</h2>
                                 <p>
                                     Productive teamwork happens in channels
-                                    — organized spaces for everything
-                                    related to a project, topic or team.
+                                    — <br/>organized spaces for everything
+                                    related to a project,<br /> topic or team.
                             </p>
                             </div>
                             <video className='video1-tag' autoPlay loop muted>
@@ -127,11 +127,11 @@ class SplashContainer extends React.Component {
                             <video className='video2-tag' autoPlay loop muted>
                                 <source src={video2URL} type='video/mp4' />
                             </video>
-                            <div className="splash3-content second">
+                            <div className="splash3-content1 second">
                                 <h2>Shared channels bring companies together</h2>
                                 <p>
                                     Now channels can help you work as closely
-                                    with external partners and clients as you
+                                    with external<br /> partners and clients as you
                                     do with teams down the hall.
                             </p>
                             </div>
@@ -141,7 +141,7 @@ class SplashContainer extends React.Component {
                 <div className="homepage-7-div">
                     <p className="better-text">Choose a better way to work</p>
                     <ul className="homepage-link">
-                        <Link className="try-c-link-bottom" to="/signup">
+                        <Link className="try-s-link-bottom" to="/signup">
                             TRY SCOOP
                         </Link>
                         <a

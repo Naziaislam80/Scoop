@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
             </div>
             <footer className="homepage-4-div">
                 <a
-                    href="https://github.com/Naziaislam80"
+                    href=""
                     className="github-link"
                     target="_blank"
                 >
@@ -120,6 +120,13 @@ class SessionForm extends React.Component {
                         className="github-img"
                     />
                 </a>
+                <a
+                        href=""
+                        className="portfolio"
+                        target="_blank"
+                    >
+                        About Me
+                 </a>
 
                 <a
                     href=""

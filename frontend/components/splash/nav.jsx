@@ -10,7 +10,7 @@ const NavBarComponent = ({ currentUser, logout }) => {
     ) : (
             <div className="seshbuttons">
                 <Link className="btn loginbutton" to="/login">Sign in</Link>
-                <Link className="btn signupbutton" to="/signup">Get Started</Link>
+                <Link className="btn signupbutton" to="/signup">GET STARTED</Link>
             </div>
         );
 
@@ -21,7 +21,7 @@ const NavBarComponent = ({ currentUser, logout }) => {
                     src={logoURL}
                     className="logo-img"
                 />
-                <h1 className="logo">Scoop</h1>
+                <h1 className="logo">scoop</h1>
             </Link>
             <div className="seshlinks">
                 {display}

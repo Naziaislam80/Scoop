@@ -103,7 +103,7 @@ class LogInForm extends React.Component {
             </div>
             <footer className="homepage-4-div">
                 <a
-                    href="https://github.com/Naziaislam80"
+                    href=""
                     className="github-link"
                     target="_blank"
                 >
@@ -111,6 +111,13 @@ class LogInForm extends React.Component {
                         src="https://image.flaticon.com/icons/svg/2111/2111432.svg"
                         className="github-img"
                     />
+                </a>
+                <a
+                        href=""
+                        className="portfolio"
+                        target="_blank"
+                    >
+                        About Me
                 </a>
 
                 <a
