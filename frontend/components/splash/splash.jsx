@@ -77,8 +77,8 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Conversations, organized</h3>
                         <p>
-                            Instead of a single overstuffed inbox, conversations in Scoop
-                            happen in dedicated spaces called channels.
+                            Instead of a single overstuffed inbox,<br /> conversations in Scoop
+                            happen in dedicated<br /> spaces called channels.
                         </p>
                     </div>
                     <div className="features-div">
@@ -88,8 +88,8 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Get looped in, not out</h3>
                         <p>
-                            Scoop makes it simple to follow conversations or find important
-                            information in an easily searchable archive.
+                            Scoop makes it simple to follow conversations or<br /> find important
+                            information in an easily<br /> searchable archive.
                         </p>
                     </div>
                     <div className="features-div">
@@ -99,8 +99,8 @@ class SplashContainer extends React.Component {
                         />
                         <h3>Give focus a chance</h3>
                         <p>
-                            Unlike email, Scoop lets you choose which conversations are
-                            most important — and which can wait.
+                            Unlike email, Scoop lets you choose which<br /> conversations are
+                            most important — and which<br /> can wait.
                         </p>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ class SplashContainer extends React.Component {
                                 <p>
                                     Productive teamwork happens in channels
                                     — <br/>organized spaces for everything
-                                    related to a project,<br /> topic or team.
+                                    related to a project,<br/> topic or team.
                             </p>
                             </div>
                             <video className='video1-tag' autoPlay loop muted>

@@ -37,7 +37,7 @@
     box-sizing: inherit;
     display: block;
     margin-bottom: 1rem;
-    z-index: 1;
+   
     max-width: 459px;
     height: 177px;
 
@@ -49,13 +49,10 @@
     height: 78px;
     width: 459px;
     font-size: 20px;
-    position:relative;
-    z-index: 2;
     font-weight: 500;
     margin: 0px 0px 32px;
     letter-spacing: 1.2px;
     padding-bottom: 10px;
-    
 }
 
 .main-img {
@@ -86,6 +83,7 @@
     justify-content: space-evenly;
     line-height: 29px;
     font-size: 18px;
+    margin-left: 60px;
 }
 
 .github-img, .linkedin-img{
@@ -129,7 +127,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 180px;
+    margin-left: 145px;
 }
 
 .splash3-content1 h2 {
@@ -209,7 +207,6 @@ a:hover{
     margin-right: 5px;
     color: white;
     border: 1px solid #611f69;
-    position:relative;
     z-index: 2;
     width: 178px;
     height: 57px;
@@ -227,7 +224,6 @@ a:hover{
     margin-right: 5px;
     color: #611f69;
     border: 1px solid #611f69;
-    position:relative;
     z-index: 2;
     width: 178px;
     height: 57px;
