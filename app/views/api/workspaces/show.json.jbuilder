@@ -1,0 +1,1 @@
+json.partial! 'api/work_spaces/work_space', work_space: @work_space

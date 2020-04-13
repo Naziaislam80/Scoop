@@ -1,36 +1,30 @@
-import * as APIUtil from '../util/user_api_util';
+import * as UserApiUtil from "../util/user_api_util";
 
-export const RECEIVE_USERS = 'RECEIVE_USERS';
-export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_USER = "RECEIVE_USER"
 
-const receiveUsers = (users) => {
+const receiveUsers = users => {
     return {
         type: RECEIVE_USERS,
         users
-    }
-}
-
-const receiveUserErrors = (errors) => {
-    return {
-        type: RECEIVE_USER_ERRORS,
-        errors
-    }
-}
-
-export const fetchChannelUsers = (channelId) => {
-    return (dispatch) => {
-        return APIUtil.fetchChannelUsers(channelId).then(
-            (workSpaces) => { dispatch(receiveUsers(workSpaces)) },
-            (errors) => { dispatch(receiveUserErrors(errors)) }
-        );
     };
 };
 
-export const fetchUserWorkSpace = (workSpaceId) => {
-    return (dispatch) => {
-        return APIUtil.fetchUserWorkSpace(workSpaceId).then(
-            (messages) => { dispatch(receiveUsers(messages)) },
-            (errors) => { dispatch(receiveUserErrors(errors)) }
-        );
+const receiveUser = user => {
+    return {
+        type: RECEIVE_USER,
+        user
     };
+};
+
+export const fetchUsers = () => (dispatch) => {
+    return UserApiUtil.fetchUsers().then(users =>
+        dispatch(receiveUsers(users))
+    );
+};
+
+export const fetchUser = (userId) => (dispatch) => {
+    return UserApiUtil.fetchUser(userId).then(user =>
+        dispatch(receiveUser(user))
+    );
 };

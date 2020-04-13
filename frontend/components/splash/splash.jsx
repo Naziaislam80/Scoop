@@ -111,8 +111,8 @@ class SplashContainer extends React.Component {
                                 <h2>Make the change to channels</h2>
                                 <p>
                                     Productive teamwork happens in channels
-                                    — <br/>organized spaces for everything
-                                    related to a project,<br/> topic or team.
+                                    — organized<br /> spaces for everything
+                                    related to a project, topic or team.
                             </p>
                             </div>
                             <video className='video1-tag' autoPlay loop muted>

@@ -1,15 +1,17 @@
-export const fetchChannelUsers = (channelId) => {
-    return $.ajax({
-        method: "GET",
-        url: `api/users`,
-        data: { channelId }
-    });
+export const fetchUsers = () => {
+    return (
+        $.ajax({
+            method: "GET",
+            url: "/api/users"
+        })
+    );
 };
 
-export const fetchUserWorkSpace = (workSpaceId) => {
-    return $.ajax({
-        method: "GET",
-        url: `api/users`,
-        data: { workSpaceId }
-    });
+export const fetchUser = (id) => {
+    return (
+        $.ajax({
+            method: "GET",
+            url: `/api/users/${id}`
+        })
+    );
 };

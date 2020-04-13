@@ -1,0 +1,1 @@
+json.extract! channel, :id, :title, :work_space_id

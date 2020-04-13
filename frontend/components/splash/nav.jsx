@@ -9,6 +9,7 @@ const NavBarComponent = ({ currentUser, logout }) => {
             <button onClick={logout}>Log Out</button>
         </div>
     ) : (
+            
             <div className="seshbuttons">
                 <Link className="btn loginbutton" to="/login">Sign in</Link>
                 <Link className="btn signupbutton" to="/signup">GET STARTED</Link>
