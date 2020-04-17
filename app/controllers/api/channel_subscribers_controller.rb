@@ -1,7 +1,7 @@
 
 class Api::ChannelSubscribersController < ApplicationController
       def index
-        @channel_subscriber = channel_subscribers.all
+        @channel_subscribers = channel_subscribers.all
         render :index
     end
 
@@ -10,7 +10,7 @@ class Api::ChannelSubscribersController < ApplicationController
         if @channel_subscriber
             render :show
         else
-            render json: ['User does not exist'], status: 404
+            render json: ['Channel subscription does not exist'], status: 404
         end
     end
 

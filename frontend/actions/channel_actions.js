@@ -1,6 +1,7 @@
-import * as ChannelApiUtil from '../util/channel_api_util';
+import * as APIUtil from '../util/channel_api_utl';
+import { receiveCurrentUser } from '../actions/session_actions';
 
-// regular actions
+
 export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS";
 export const RECEIVE_CHANNEL = "RECEIVE_CHANNEL";
 export const REMOVE_CHANNEL = "REMOVE_CHANNELS";
@@ -40,10 +41,9 @@ const clearChannelErrors = () => {
     };
 };
 
-// thunk actions
 export const fetchChannels = () => {
     return (dispatch) => {
-        return ChannelApiUtil.fetchChannels().then((channels) => {
+        return APIUtil.fetchChannels().then((channels) => {
             return dispatch(receiveChannels(channels))
         });
     };
@@ -51,7 +51,7 @@ export const fetchChannels = () => {
 
 export const fetchChannel = (id) => {
     return (dispatch) => {
-        return ChannelApiUtil.fetchChannel(id).then((channel) => {
+        return APIUtil.fetchChannel(id).then((channel) => {
             return dispatch(receiveChannel(channel));
         });
     };
@@ -59,7 +59,7 @@ export const fetchChannel = (id) => {
 
 export const destroyChannel = (id) => {
     return (dispatch) => {
-        return ChannelApiUtil.destroyChannel(id).then((channel) => {
+        return APIUtil.destroyChannel(id).then((channel) => {
             return dispatch(removeChannel(channel));
         });
     };
@@ -67,7 +67,7 @@ export const destroyChannel = (id) => {
 
 export const updateChannel = (id) => {
     return (dispatch) => {
-        return ChannelApiUtil.updateChannel(id).then((channel) => {
+        return APIUtil.updateChannel(id).then((channel) => {
             return dispatch(receiveChannel(channel));
         });
     };
@@ -75,7 +75,7 @@ export const updateChannel = (id) => {
 
 export const createChannel = (channel) => {
     return (dispatch) => {
-        return ChannelApiUtil.createChannel(channel).then((channel) => {
+        return APIUtil.createChannel(channel).then((channel) => {
             return dispatch(receiveChannel(channel))
         });
     };
@@ -83,7 +83,7 @@ export const createChannel = (channel) => {
 
 export const fetchUserChannels = (userId) => {
     return (dispatch) => {
-        return ChannelApiUtil.fetchUserChannels(userId).then(channels => {
+        return APIUtil.fetchUserChannels(userId).then(channels => {
             return dispatch(receiveChannels(channels));
         });
     };

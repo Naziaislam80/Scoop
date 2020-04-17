@@ -5,10 +5,15 @@ export default (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_MESSAGES:
-            return merge({}, action.messages);
+            // debugger
+            // Object.assign({}, state, action.messages)
+            return action.messages;
         case RECEIVE_MESSAGE:
-            return merge({}, state, { [action.message.id]: action.message });
+            // debugger
+            return merge({}, state, {[action.message.id]:action.message});
         default:
             return state;
     };
 };
+
+

@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Message < ApplicationRecord
+    # after_create_commit 
     validates :body, presence: true
     belongs_to :user
     belongs_to :channel

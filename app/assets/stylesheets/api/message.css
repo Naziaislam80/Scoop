@@ -1,0 +1,43 @@
+.message-div{
+    margin: 10px;
+    display: flex;
+}
+
+.who-div{
+    display: flex;
+}
+
+.who-div > svg{
+    font-size: 35px;
+}   
+
+
+.message-author{
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+    /* // margin-bottom: 10px; */
+}
+
+.message-date{
+    font-weight: 400;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.message-div:hover{
+    background-color:#fdeaee;;
+}
+
+
+.author-time {
+    display: flex;
+    align-items: baseline;
+}
+
+.message-text {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    padding-top: 5px;
+}

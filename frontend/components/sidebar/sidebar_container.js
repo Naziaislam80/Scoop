@@ -1,6 +1,8 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import SideBar from './sidebar';
 import { logout } from '../../actions/session_actions';
+
 
 const mapStateToProps = (state) => { 
     return {

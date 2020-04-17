@@ -1,1 +1,4 @@
-json.extract! channel, :id, :title, :work_space_id
+  
+json.set! channel.id do
+    json.extract! channel, :id, :title
+end

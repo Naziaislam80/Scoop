@@ -35,7 +35,7 @@ class LogInForm extends React.Component {
 
     componentWillUnmount() {
         if (this.props.errors.length) {
-            this.props.clearErrors();
+            this.props.removeErrors();
         }
     };
 
@@ -64,7 +64,7 @@ class LogInForm extends React.Component {
         <div className="login-page">
             <div className='login-form'>
                 <div className="outer-form-div"></div>
-                <h2 className="form-title-name">Sign in to your workspace</h2>
+                <h2 className="form-title-name">Sign in to your Workspace</h2>
                 
                 <h2 className="title">Enter your email and password.</h2>
                 <form>

@@ -1,6 +1,9 @@
 class Api::MessagesController < ApplicationController
     def index
-        @messages = Message.all.includes(:user, :channel_id)
+        
+        @channel = Channel.find(params[:channelId])
+       
+        @messages = @channel.messages
         render :index
     end
 
@@ -10,7 +13,23 @@ class Api::MessagesController < ApplicationController
     end
 
     def create
-        # not needed, Action Cable will take care of it
+        @message = Message.new(message_params)
+        if @message.save 
+            message = {
+                id: @message.id,
+                user_id: @message.user_id,
+                channel_id: @message.channel_id,
+                body: @message.body,
+                created_at: @message.created_at,
+                updated_at: @message.updated_at
+            }
+            ChatChannel.load(message.as_json)
+            render :show
+        else
+            render json: @message.errors.full_messages, status: 422
+        end
+
+        
     end
 
     def update

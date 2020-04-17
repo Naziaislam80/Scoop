@@ -7,11 +7,15 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import GreetingContainer from "./greeting/greeting_container";
 import NavContainer from './splash/nav_container';
 import SignUpFormContainer from './session/sign_up_container';
 import LogInFormContainer from './session/log_in_container';
 import SplashContainer from './splash/splash';
 import DashboardContainer from './dashboard/dashboard_container';
+import ChannelContainer from "./channels/channel_container";
+import MainContainer from "./sidebar/main_container";
+import ChannelFormContainer from "./channels/channel_form_container";
 import { AuthRoute, ProtectedRoute } from '../util/route';
 
 const App = () => (
@@ -25,10 +29,20 @@ const App = () => (
         </header>
 
         <Switch>
+            <ProtectedRoute
+                exact
+                path="/main/channels/create"
+                component={ChannelFormContainer}
+            />
+            <ProtectedRoute path="/main/channels/:channelId" component={GreetingContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/" component={SplashContainer} />
-            <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+            <ProtectedRoute
+                exact
+                path={["/main", "/main/channels/:channelId"]}
+                component={ChannelContainer}
+            />
         </Switch>
     </div>
 );

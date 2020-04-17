@@ -1,6 +1,6 @@
 class Api::ChannelsController < ApplicationController
     def index
-        @channels = Channel.all.includes(:work_space_id)
+        @channels = Channel.all
         render :index
     end
 
@@ -14,11 +14,14 @@ class Api::ChannelsController < ApplicationController
     end
 
     def create
+        # ActiveRecord::Base.transaction do
         @channel = Channel.new(channel_params)
-        @channel.work_space_id.user_id = current_user.id
+        # debugger
+        @channel.work_space_id = WorkSpace.first.id
 
         if @channel.save
-           ChannelSubscriber.create!(user_id: @channel.user_id, channel_id: @channel.id)
+
+          
 
             render :show
         else

@@ -1,0 +1,27 @@
+.messageform{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px ;
+    height: 50px;
+}
+
+
+.message-box{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.messageform-submit{
+    margin-right: 10px;
+    display: none;
+}
+
+.outer-messageform-div {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    bottom: 20px;
+    position: absolute;
+    width: 80%;
+}
