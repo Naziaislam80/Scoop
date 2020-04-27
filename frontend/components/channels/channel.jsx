@@ -1,8 +1,7 @@
 import React from "react";
-import SideBar from "../sidebar/sidebar_container";
 import MessageContainer from "../messages/message_container";
 import MessageFormContainer from "../messages/messageform_container";
-import MessageForm from "../messages/messageform";
+
 
 
 
@@ -34,7 +33,7 @@ class Channel extends React.Component {
         const { receiveMessage, receiveMessages } = this.props;
         App.currentChannel = App.cable.subscriptions.create(
             { channel: "ChatChannel", id: `${channelId}` },
-            // { channel: "ChatChannel", id: channelId },
+           
             {
                 received: data => {
                     // debugger
@@ -45,12 +44,6 @@ class Channel extends React.Component {
                         case "messages":
                             receiveMessages(data.messages);
                             break;
-
-                        //     receiveMessage(JSON.parse(data.message)); //passing incoming
-                        //     break;
-                        // case "messages":
-                        //     receiveMessages(JSON.parse(data.messages));
-                        //     break;
                     }
                 },
                 speak: function (data) {

@@ -6,7 +6,7 @@ import NavBar from "../splash/nav";
 
 const Main = (props) => {
     return (
-        <div className="mainjsx-div">
+        <div className="main-div">
             <Route path={["/", "/main", "/main/channels/:channelId"]}
                 component={SideBar} />
             <Switch>

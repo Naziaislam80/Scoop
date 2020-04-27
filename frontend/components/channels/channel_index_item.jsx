@@ -7,7 +7,7 @@ class ChannelIndexItem extends React.Component {
         super(props);
         this.toggleSelect = this.toggleSelect.bind(this);
         this.prevId;
-        this.removeChannel = this.removeChannel.bind(this);
+      
         this.state = { channel: this.props.channel };
     }
 
@@ -19,14 +19,7 @@ class ChannelIndexItem extends React.Component {
         }
     } 
 
-    removeChannel(e) {
-        e.preventDefault();
-        let modal = document.getElementById("myModal");
-        modal.style.display = "none";
-        this.props
-
-    }
-
+  
 
 
     componentDidMount() {
@@ -45,9 +38,6 @@ class ChannelIndexItem extends React.Component {
                 modal.style.display = "none";
             };
         }
-        if (yes) {
-            yes.onclick = this.removeChannel;
-        }
 
         window.onclick = function (event) {
             if (event.target == modal) {
@@ -58,8 +48,6 @@ class ChannelIndexItem extends React.Component {
 
     render() {
         // debugger
-
-        let canDelete;
         let channelId = this.props.channel.id;
         if (this.props.currentUser.id === this.props.channel.user_id) {
             canDelete =
@@ -85,7 +73,6 @@ class ChannelIndexItem extends React.Component {
                         # {this.props.channel.title}
                     </li>
                 </Link>
-                {canDelete}
             </div>
         );
     }
