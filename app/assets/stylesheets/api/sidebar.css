@@ -200,3 +200,15 @@
     padding-bottom: 10px;
 }
 
+#x-Btn{
+    display: none;
+    margin-right: 15px;
+}
+
+#x-Btn:hover{
+    text-shadow: 0 0 3px white;
+}
+
+#selected{
+    background-color: #350D36;
+}

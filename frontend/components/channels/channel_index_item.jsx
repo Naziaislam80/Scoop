@@ -7,7 +7,7 @@ class ChannelIndexItem extends React.Component {
         super(props);
         this.toggleSelect = this.toggleSelect.bind(this);
         this.prevId;
-      
+        this.removeChannel = this.removeChannel.bind(this);
         this.state = { channel: this.props.channel };
     }
 
@@ -19,14 +19,22 @@ class ChannelIndexItem extends React.Component {
         }
     } 
 
+    removeChannel(e) {
+        e.preventDefault();
+        let modal = document.getElementById("deleteModal");
+        modal.style.display = "none";
+        this.props
+            .deleteChannel(this.props.channel.id)
+        
+
+    }
   
 
-
     componentDidMount() {
-        let modal = document.getElementById("myModal");
-        let btn = document.getElementById("myBtn");
-        let span = document.getElementsByClassName("close")[0];
-        let yes = document.getElementsByClassName("modal-yes")[0];
+        let modal = document.getElementById("deleteModal");
+        let btn = document.getElementById("x-Btn");
+        let span = document.getElementsByClassName("modal-option2")[0];
+        let yes = document.getElementsByClassName("modal-option1")[0];
         if (btn) {
             btn.onclick = function () {
                 modal.style.display = "block";
@@ -38,6 +46,9 @@ class ChannelIndexItem extends React.Component {
                 modal.style.display = "none";
             };
         }
+        if (yes) {
+            yes.onclick = this.removeChannel;
+        }
 
         window.onclick = function (event) {
             if (event.target == modal) {
@@ -46,20 +57,27 @@ class ChannelIndexItem extends React.Component {
         };
     }
 
+
     render() {
         // debugger
+        let optionDelete;
         let channelId = this.props.channel.id;
-        if (this.props.currentUser.id === this.props.channel.user_id) {
-            canDelete =
+        if (channelId = this.props.channel.id) {
+            optionDelete =
                 <>
-                    <button id="myBtn">X</button>
-                    <div id="myModal" className="modal">
-                        <div className="modal-content">
-                            <p className="modal-text">Confirm channel deletion:</p>
-                            <button className="modal-yes">Yes</button>
-                            <span className="close">No</span>
-                        </div>
+                <button id="x-Btn">
+                    <img
+                    src="https://image.flaticon.com/icons/svg/2810/2810945.svg"
+                    className="thread-img"
+                    />
+                </button>
+                <div id="DeleteModal" className="modal">
+                    <div className="modal-info">
+                        <p className="modal-header">Are you sure you want to delete this channel?</p>
+                        <button className="modal-option1">Yes</button>
+                        <span className="modal-option2">No</span>
                     </div>
+                </div>
                 </>
         }
 
