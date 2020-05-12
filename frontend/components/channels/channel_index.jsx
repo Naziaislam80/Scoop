@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index_item';
+import DmIndexItem from './dm_index_item';
 import { Link } from 'react-router-dom';
 
 
@@ -25,9 +26,21 @@ class ChannelIndex extends React.Component {
         }
     }
 
+    toggleDmForm(e) {
+        const modalEle = document.getElementsByClassName("channel-form")[0];
+        if (modalEle) {
+            if (!modalEle.classList.contains("active-modal")) {
+                modalEle.classList.add("active-modal");
+            } else {
+                modalEle.classList.remove("active-modal");
+            }
+        }
+    }
+
     render() {
         let channels = [];
         let channelList;
+        let dmList;
         
         if (this.props.channels) {
             channels = this.props.channels;
@@ -43,6 +56,21 @@ class ChannelIndex extends React.Component {
                 );
             });
         }
+        if (this.props.channels) {
+            channels = this.props.channels;
+
+            dmList = Object.values(channels).map((channel) => {
+                return (
+                    <DmIndexItem
+                        key={channel.id}
+                        channel={channel}
+                        currentUser={this.props.currentUser}
+                        deleteChannel={this.props.destroyChannel}
+                    />
+                );
+            });
+        }
+        
 
         return (
             <div>
@@ -83,21 +111,31 @@ class ChannelIndex extends React.Component {
                 </div>
                     <div className="dm-title">
                         <h3 className="channel-title">Direct Messages</h3>
+                        <Link className="create-link" to="/main/channels/create">
                         <img
+                            className="create-button"
+                            src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"
+                            onClick={this.toggleDmForm}
+                        />
+                        </Link>
+                        {/* <img
                             className="dm-button"
                             src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"
-                        />
+                        /> */}
+                        
                     </div>
                     <div className="dm-content">
                     <ul className="dmname-ul">
                         <li className="dm-placeholder">
-                            <img
+                            {/* <img
                                     src="https://image.flaticon.com/icons/svg/319/319873.svg"
                             className="button-img"
                             /> 
-                                Scoop
+                                Scoop */}
+                                {dmList}
+
                         </li>
-                        <li className="dm-placeholder">
+                        {/* <li className="dm-placeholder">
                             <img
                                     src="https://image.flaticon.com/icons/svg/319/319873.svg"
                                 className="button-img"
@@ -138,7 +176,7 @@ class ChannelIndex extends React.Component {
                                 className="button-img"
                             /> 
                                 Christian
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 </div>
