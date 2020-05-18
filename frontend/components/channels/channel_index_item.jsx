@@ -62,16 +62,15 @@ class ChannelIndexItem extends React.Component {
         // debugger
         let optionDelete;
         let channelId = this.props.channel.id;
-        let isSelected = document.getElementById("selected")
-        if (isSelected) {
+        // if (channelId) {
             optionDelete =
                 <>
-                    <button id="x-Btn">
+                     <button id="x-Btn">
                         <img
-                            src="https://image.flaticon.com/icons/svg/2810/2810945.svg"
-                            className="thread-img"
+                        src="https://image.flaticon.com/icons/png/512/1617/1617296.png"
+                        className="thread-img"
                         />
-                    </button>
+                    </button> 
                     <div id="DeleteModal" className="modal">
                         <div className="modal-info">
                             <p className="modal-header">Are you sure you want to delete this channel?</p>
@@ -80,7 +79,7 @@ class ChannelIndexItem extends React.Component {
                         </div>
                     </div>
                 </>
-        }
+        // }
         return (
             <div className="channelli-outer" id={this.props.channel.title}>
                 <Link
@@ -91,6 +90,7 @@ class ChannelIndexItem extends React.Component {
                         # {this.props.channel.title}
                     </li>
                 </Link>
+                {optionDelete}
             </div>
         );
     }

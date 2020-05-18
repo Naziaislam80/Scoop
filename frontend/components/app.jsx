@@ -16,6 +16,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import ChannelContainer from "./channels/channel_container";
 import MainContainer from "./sidebar/main_container";
 import ChannelFormContainer from "./channels/channel_form_container";
+import DmFormContainer from "./channels/dm_form_container";
 import { AuthRoute, ProtectedRoute } from '../util/route';
 
 const App = () => (
@@ -33,6 +34,11 @@ const App = () => (
                 exact
                 path="/main/channels/create"
                 component={ChannelFormContainer}
+            />
+            <ProtectedRoute
+                exact
+                path="/main/channels/create"
+                component={DmFormContainer}
             />
             <ProtectedRoute path="/main/channels/:channelId" component={GreetingContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
