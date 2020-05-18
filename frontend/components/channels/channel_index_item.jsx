@@ -17,7 +17,7 @@ class ChannelIndexItem extends React.Component {
         if (this.state.channel.id !== this.props.match.params.channelId) {
             this.props.history.push(`/main/channels/${this.state.channel.id}`)
         }
-    } 
+    }
 
     removeChannel(e) {
         e.preventDefault();
@@ -25,10 +25,10 @@ class ChannelIndexItem extends React.Component {
         modal.style.display = "none";
         this.props
             .deleteChannel(this.props.channel.id)
-        
+
 
     }
-  
+
 
     componentDidMount() {
         let modal = document.getElementById("deleteModal");
@@ -62,25 +62,25 @@ class ChannelIndexItem extends React.Component {
         // debugger
         let optionDelete;
         let channelId = this.props.channel.id;
-        if (channelId = this.props.channel.id) {
+        let isSelected = document.getElementById("selected")
+        if (isSelected) {
             optionDelete =
                 <>
-                <button id="x-Btn">
-                    <img
-                    src="https://image.flaticon.com/icons/svg/2810/2810945.svg"
-                    className="thread-img"
-                    />
-                </button>
-                <div id="DeleteModal" className="modal">
-                    <div className="modal-info">
-                        <p className="modal-header">Are you sure you want to delete this channel?</p>
-                        <button className="modal-option1">Yes</button>
-                        <span className="modal-option2">No</span>
+                    <button id="x-Btn">
+                        <img
+                            src="https://image.flaticon.com/icons/svg/2810/2810945.svg"
+                            className="thread-img"
+                        />
+                    </button>
+                    <div id="DeleteModal" className="modal">
+                        <div className="modal-info">
+                            <p className="modal-header">Are you sure you want to delete this channel?</p>
+                            <button className="modal-option1">Yes</button>
+                            <span className="modal-option2">No</span>
+                        </div>
                     </div>
-                </div>
                 </>
         }
-
         return (
             <div className="channelli-outer" id={this.props.channel.title}>
                 <Link

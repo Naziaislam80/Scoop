@@ -1292,8 +1292,9 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
       // debugger
       var optionDelete;
       var channelId = this.props.channel.id;
+      var isSelected = document.getElementById("selected");
 
-      if (channelId = this.props.channel.id) {
+      if (isSelected) {
         optionDelete = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           id: "x-Btn"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
