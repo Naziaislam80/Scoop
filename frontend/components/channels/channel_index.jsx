@@ -36,7 +36,13 @@ class ChannelIndex extends React.Component {
             }
         }
     }
-
+    deleteChannel(channelId) {
+       const destroyC = this.props.destroyChannel
+       return (e => {
+        e.preventDefault() 
+        destroyC(channelId)
+       })
+    }
     render() {
         let channels = [];
         let channelList;
@@ -46,13 +52,28 @@ class ChannelIndex extends React.Component {
             channels = this.props.channels;
             
             channelList = Object.values(channels).map((channel) => {
+                // console.log(channel.id)
                 return (
+                    <>
+
                     <ChannelIndexItem
                         key={channel.id}
+                        channelId={channel.id}
+            
                         channel={channel}
                         currentUser={this.props.currentUser}
-                        deleteChannel={this.props.destroyChannel}
+                        
+                        // deleteChannel={this.props.destroyChannel(channel.id)}
                     />
+                    <div>
+                            <button id="x-Btn" onClick={this.deleteChannel(channel.id)}>
+                                <img
+                                    src="https://image.flaticon.com/icons/png/512/1617/1617296.png"
+                                    className="thread-img"
+                                />
+                            </button>
+                    </div>
+                    </>
                 );
             });
         }

@@ -3,6 +3,7 @@ import merge from "lodash/merge";
 
 export default (state = {}, action) => {
     Object.freeze(state);
+   
     let newState;
     switch (action.type) {
         case RECEIVE_ALL_CHANNELS:

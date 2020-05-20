@@ -563,6 +563,7 @@ var Channel = /*#__PURE__*/function (_React$Component) {
   _createClass(Channel, [{
     key: "getCurrentChannel",
     value: function getCurrentChannel(channelId) {
+      //   `debugger`
       if (App.currentChannel) {
         App.currentChannel.unsubscribe();
       }
@@ -575,7 +576,8 @@ var Channel = /*#__PURE__*/function (_React$Component) {
         id: "".concat(channelId)
       }, {
         received: function received(data) {
-          // debugger
+          debugger;
+
           switch (data.type) {
             case "message":
               receiveMessage(data.message);
@@ -1051,6 +1053,15 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "deleteChannel",
+    value: function deleteChannel(channelId) {
+      var destroyC = this.props.destroyChannel;
+      return function (e) {
+        e.preventDefault();
+        destroyC(channelId);
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this = this;
@@ -1062,12 +1073,20 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
       if (this.props.channels) {
         channels = this.props.channels;
         channelList = Object.values(channels).map(function (channel) {
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          // console.log(channel.id)
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: channel.id,
+            channelId: channel.id,
             channel: channel,
-            currentUser: _this.props.currentUser,
-            deleteChannel: _this.props.destroyChannel
-          });
+            currentUser: _this.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
+
+          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            id: "x-Btn",
+            onClick: _this.deleteChannel(channel.id)
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            src: "https://image.flaticon.com/icons/png/512/1617/1617296.png",
+            className: "thread-img"
+          }))));
         });
       }
 
@@ -1157,14 +1176,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  // debugger
   return {
+    // channelId: ownProps.match.params.channelId,
+    // currentChannel: ownProps.match.params.channelId,
     currentUser: state.entities.users[state.session.id],
-    channels: state.entities.channels
+    channels: state.entities.channels,
+    general_channel: state.entities.users.channelId
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    fetchChannel: function (_fetchChannel) {
+      function fetchChannel(_x) {
+        return _fetchChannel.apply(this, arguments);
+      }
+
+      fetchChannel.toString = function () {
+        return _fetchChannel.toString();
+      };
+
+      return fetchChannel;
+    }(function (id) {
+      return dispatch(fetchChannel(id));
+    }),
     fetchUserChannels: function fetchUserChannels(userId) {
       return dispatch(Object(_actions_channel_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUserChannels"])(userId));
     },
@@ -1234,8 +1270,10 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.toggleSelect = _this.toggleSelect.bind(_assertThisInitialized(_this));
-    _this.prevId;
-    _this.removeChannel = _this.removeChannel.bind(_assertThisInitialized(_this));
+    _this.prevId; // this.removeChannel = this.removeChannel.bind(this);
+    // this.openForm = this.openForm.bind(this);
+    // this.noForm = this.noForm.bind(this);
+
     _this.state = {
       channel: _this.props.channel
     };
@@ -1245,78 +1283,87 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ChannelIndexItem, [{
     key: "toggleSelect",
     value: function toggleSelect() {
+      // debugger
       var selected = document.getElementById(this.props.channel.title);
       selected.setAttribute("id", "selected");
 
       if (this.state.channel.id !== this.props.match.params.channelId) {
-        this.props.history.push("/main/channels/".concat(this.state.channel.id));
-      }
-    }
-  }, {
-    key: "removeChannel",
-    value: function removeChannel(e) {
-      e.preventDefault();
-      var modal = document.getElementById("deleteModal");
-      modal.style.display = "none";
-      this.props.deleteChannel(this.props.channel.id);
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var modal = document.getElementById("deleteModal");
-      var btn = document.getElementById("x-Btn");
-      var span = document.getElementsByClassName("modal-option2")[0];
-      var yes = document.getElementsByClassName("modal-option1")[0];
+        this.props.history.push("/main/channels/".concat(this.state.channel.id)); // let btn = document.getElementById("x-Btn");
+        // btn.style.display = "flex";
+      } // this.props.fetchChannel(this.state.channel.id);
+      // debugger
 
-      if (btn) {
-        btn.onclick = function () {
-          modal.style.display = "block";
-        };
-      }
+    } // removeChannel(e) {
+    //     // debugger
+    //     e.preventDefault();
+    //     let modal = document.getElementById("DeleteModal");
+    //     modal.style.display = "none";
+    //     this.props
+    //         .deleteChannel(this.props.channelId)
+    // }
+    // openForm(e) {
+    //     e.preventDefault();
+    //     let modal = document.getElementById("DeleteModal");
+    //     modal.style.display = "block";
+    // }
+    // noForm(e) {
+    //     e.preventDefault();
+    //     let modal = document.getElementById("DeleteModal");
+    //     modal.style.display = "none";
+    // }
+    // componentDidMount() {
+    //     let modal = document.getElementById("DeleteModal");
+    //     let btn = document.getElementById("x-Btn");
+    //     let no = document.getElementsByClassName("modal-option2")[0];
+    //     let yes = document.getElementsByClassName("modal-option1")[0];
+    //     if (btn) {
+    //         btn.onClick = function () {
+    //             debugger
+    //             modal.style.display = "block";
+    //         };
+    //     };
+    //     if (no) {
+    //         no.onClick = function () {
+    //             modal.style.display = "none";
+    //         };
+    //     }
+    //     if (yes) {
+    //         yes.onClick = this.removeChannel;
+    //     }
+    //     window.onClick = function (event) {
+    //         if (event.target == modal) {
+    //             modal.style.display = "none";
+    //         }
+    //     };
+    // }
 
-      ;
-
-      if (span) {
-        span.onclick = function () {
-          modal.style.display = "none";
-        };
-      }
-
-      if (yes) {
-        yes.onclick = this.removeChannel;
-      }
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    }
   }, {
     key: "render",
     value: function render() {
       // debugger
-      var optionDelete;
-      var channelId = this.props.channel.id; // if (channelId) {
-
-      optionDelete = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "x-Btn"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://image.flaticon.com/icons/png/512/1617/1617296.png",
-        className: "thread-img"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "DeleteModal",
-        className: "modal"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "modal-header"
-      }, "Are you sure you want to delete this channel?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "modal-option1"
-      }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "modal-option2"
-      }, "No")))); // }
-
+      // let optionDelete;
+      // let channelId = this.props.channel.id;
+      // let general_channel = this.props.general_channel;
+      // let isSelected = document.getElementById("selected")
+      // if (channelId !== general_channel) {
+      // // if (channelId) {
+      //     optionDelete =
+      //         <>
+      //             <button id="x-Btn" onClick={this.openForm}>
+      //                 <img
+      //                     src="https://image.flaticon.com/icons/png/512/1617/1617296.png"
+      //                     className="thread-img"
+      //                 />
+      //             </button>
+      //             <div id="DeleteModal" className="modal">
+      //                 <div className="modal-info">
+      //                     <p className="modal-header">Are you sure you want to delete this channel?</p>
+      //                 <button className="modal-option1" onClick={this.removeChannel}>Yes</button>
+      //                 <button className="modal-option2" onClick={this.noForm}>No</button>
+      //                 </div>
+      //             </div>
+      //         </>
+      // }
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "channelli-outer",
         id: this.props.channel.title
@@ -1326,7 +1373,7 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "channelname-li",
         id: this.props.channel.title
-      }, "# ", this.props.channel.title)), optionDelete);
+      }, "# ", this.props.channel.title)));
     }
   }]);
 

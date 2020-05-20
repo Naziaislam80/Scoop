@@ -27,6 +27,7 @@ class Channel extends React.Component {
 
 
     getCurrentChannel(channelId) {
+    //   `debugger`
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
@@ -36,7 +37,7 @@ class Channel extends React.Component {
            
             {
                 received: data => {
-                    // debugger
+                    debugger
                     switch (data.type) {
                         case "message":
                             receiveMessage(data.message); 

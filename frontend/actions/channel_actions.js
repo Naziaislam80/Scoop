@@ -58,8 +58,11 @@ export const fetchChannel = (id) => {
 };
 
 export const destroyChannel = (id) => {
+   
     return (dispatch) => {
+       
         return APIUtil.destroyChannel(id).then((channel) => {
+            
             return dispatch(removeChannel(channel));
         });
     };
