@@ -1643,9 +1643,9 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       if (this.state.showDropdown) {
         // debugger
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "dropdown-logout"
+          className: "dropdown-logout1"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          className: "btn logoutbutton",
+          className: "btn logoutbutton1",
           to: "",
           onClick: logout
         }, "Logout")));
@@ -1682,7 +1682,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "searchPlaceholder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text" // value=""
+        type: "text" // value="" 
         // onChange={this.update("body")}
         ,
         placeholder: "Search Workspace",
@@ -1696,7 +1696,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         src: "https://image.flaticon.com/icons/svg/2001/2001580.svg",
         className: "cog-img"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "test"
+        className: "test1"
       }, this.renderDropdown())));
     }
   }]);

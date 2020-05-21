@@ -228,6 +228,16 @@ body {
     background-color: white;
 }
 
+.logoutbutton1 {
+    color: #3f0e40;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid #611f69;
+    border-radius: 5px;
+    padding: 12px 16px;
+    margin-right: 50px;
+    background-color: white;
+}
 .dashboard-title {
     color: white;
     font-size: 16px;

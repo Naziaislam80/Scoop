@@ -52,9 +52,9 @@ class Dashboard extends React.Component {
         if (this.state.showDropdown) {
             // debugger
             return (
-                <div className="dropdown-logout">
+                <div className="dropdown-logout1">
                     <div>
-                        <Link className="btn logoutbutton" to="" onClick={logout}>Logout</Link>
+                        <Link className="btn logoutbutton1" to="" onClick={logout}>Logout</Link>
                     </div>
                 </div>
             )
@@ -85,12 +85,13 @@ class Dashboard extends React.Component {
                         src="https://image.flaticon.com/icons/svg/465/465633.svg"
                         className="search-img"
                     />
+                {/* <a href="https://naziaislam80.github.io/" class="search-img"> */}
                 <div className="searchdiv">
                 <form className="searchPlaceholder">
                     <input
                     
                         type="text"
-                        // value=""
+                        // value="" 
                         // onChange={this.update("body")}
                         placeholder="Search Workspace"
                         className="searchBox"
@@ -104,7 +105,7 @@ class Dashboard extends React.Component {
                         className="cog-img"
                     />
                     </div>
-                    <div className="test">
+                    <div className="test1">
                         {this.renderDropdown()}
                     </div>
                 </div>

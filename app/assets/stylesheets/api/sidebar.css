@@ -101,6 +101,15 @@
     margin-left: 70px;
 }
 
+.test1 {
+    z-index: 10;
+    position: absolute;
+    background-color:white;
+    top: 50px;
+    
+}
+
+
 .create-button{
     margin-right: 15px;
     width: 15px;
@@ -196,7 +205,7 @@
  .dmname-li {
     padding-bottom: 10px;
      display: flex;
-    flex-direction: column;
+    
 }
 
  /* .dmli-outer {
@@ -212,17 +221,18 @@
 }
 
 
-/* #x-Btn{
-     display: none;  
-     margin-right: 15px;
-    
-}  */
+ /* #x-Btn{
+     display: none; 
+ } */
+     /* margin-right: 15px; */
+   
+
  
 
 #selected:hover {
     background-color: #350D36;
 }
-.channelname-li:hover{
+.channelname-li:hover {
     background: #350D36;
 }
 
@@ -232,23 +242,22 @@
 /* #selected #x-Btn{
    display: flex;
 } */
-/* .channelname-li:hover .thread-img {
+ /* .channelname-li:hover .thread-img {
 display: flex;
   height: 10px;
   width: 10px;
 
-}
-
-
-.channelname-li:hover{
-    background: #350D36;
-}
-
-.channelname-li:hover #x-Btn{
-   display: flex;
 } */
 
+
+/* .channelname-li:hover{
+    background: #350D36;
+} */
+
+
+
 .thread-img {
+    
     height: 20px;
     width: 20px;
 }

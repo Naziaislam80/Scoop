@@ -137,6 +137,10 @@ class Channel extends React.Component {
                                 src="https://image.flaticon.com/icons/svg/2087/2087983.svg"
                                 className="star-img"
                             />
+                            {/* <img
+                                src="https://image.flaticon.com/icons/png/512/1617/1617296.png"
+                                className="thread-img2"
+                            /> */}
                         </p>
                         </div>
                         <div className="icons">
