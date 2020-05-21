@@ -148,13 +148,13 @@ class ChannelIndex extends React.Component {
                 </div>
                     <div className="dm-title">
                         <h3 className="channel-title">Direct Messages</h3>
-                        <Link className="create-link" to="/main/channels/create">
+                        {/* <Link className="create-link" to="/main/channels/create">
                         <img
                             className="create-button"
                             src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"
                             onClick={this.toggleDmForm}
                         />
-                        </Link>
+                        </Link> */}
                         {/* <Link className="create-link" to="/main/channels/create">
                         <img
                             className="create-button"

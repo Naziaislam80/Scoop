@@ -23,11 +23,11 @@ class Message extends React.Component {
 
     render() {
         const { message, user, fetchUsers, fetchUser } = this.props;
-    
+
         const displayName = (user && user.username) ? user.username : message.username;
 
         let createdAt = message.created_at;
-     
+
 
         return (
             <div className="message-div">

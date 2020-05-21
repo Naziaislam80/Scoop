@@ -659,10 +659,12 @@ var Channel = /*#__PURE__*/function (_React$Component) {
         // if (message.channel_id == channel) {
         // if (message.channel_id === this.channelId) {
         // debugger
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_messages_message_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: Math.random(),
-          message: message
-        }); // }
+        if (message.body) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_messages_message_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: Math.random(),
+            message: message
+          }); // }
+        }
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "channelfull-div"
@@ -1137,14 +1139,7 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
         className: "dm-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "channel-title"
-      }, "Direct Messages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        className: "create-link",
-        to: "/main/channels/create"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "create-button",
-        src: "https://ya-webdesign.com/images600_/png-white-plus-sign-6.png",
-        onClick: this.toggleDmForm
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Direct Messages")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dm-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "dmname-ul"
@@ -1515,13 +1510,13 @@ var DmIndexItem = /*#__PURE__*/function (_React$Component) {
       //         </>
       // }
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "channelli-outer",
+        className: "dmli-outer",
         id: this.props.channel.title
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/main/channels/".concat(this.props.channel.id),
         onClick: this.toggleSelect
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "channelname-li",
+        className: "dmname-li",
         id: this.props.channel.title
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://image.flaticon.com/icons/svg/319/319873.svg",
@@ -1948,6 +1943,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   // debugger;
   return {
+    // users: state.entities.users,
     user: state.entities.users[ownProps.message.user_id]
   };
 };

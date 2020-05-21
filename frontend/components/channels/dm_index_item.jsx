@@ -82,12 +82,12 @@ class DmIndexItem extends React.Component {
         // }
 
         return (
-           <div className="channelli-outer" id={this.props.channel.title}>
+           <div className="dmli-outer" id={this.props.channel.title}>
                     <Link
                         to={`/main/channels/${this.props.channel.id}`}
                         onClick={this.toggleSelect}
                     >
-                        <li className="channelname-li" id={this.props.channel.title}>
+                        <li className="dmname-li" id={this.props.channel.title}>
                             <img
                                 src="https://image.flaticon.com/icons/svg/319/319873.svg"
                                 className="button-img"

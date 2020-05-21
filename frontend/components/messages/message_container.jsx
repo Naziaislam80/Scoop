@@ -8,8 +8,8 @@ import { withRouter } from "react-router-dom";
 const mapStateToProps = (state, ownProps) => {
     // debugger;
     return {
+        // users: state.entities.users,
         user: state.entities.users[ownProps.message.user_id],
-
     };
 };
 

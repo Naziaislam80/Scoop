@@ -120,8 +120,10 @@ class Channel extends React.Component {
             // if (message.channel_id == channel) {
             // if (message.channel_id === this.channelId) {
                 // debugger
+                if (message.body) {
                 return <MessageContainer key={Math.random()} message={message} />;
             // }
+                }
         });
         return (
             <div className="channelfull-div">
