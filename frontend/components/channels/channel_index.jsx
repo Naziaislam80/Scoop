@@ -52,7 +52,22 @@ class ChannelIndex extends React.Component {
             channels = this.props.channels;
             
             channelList = Object.values(channels).map((channel) => {
+                if (["Mike", 'Joe', 'Emily', 'Steven'].includes(channel.title)) return;
                 // console.log(channel.id)
+                if ((channel.title === "General")) {
+                    return (
+                        <ChannelIndexItem
+                            key={channel.id}
+                            channelId={channel.id}
+
+                            channel={channel}
+                            currentUser={this.props.currentUser}
+
+                        // deleteChannel={this.props.destroyChannel(channel.id)}
+                        />
+
+                    )
+                }
                 return (
                     <>
 
@@ -81,6 +96,7 @@ class ChannelIndex extends React.Component {
             channels = this.props.channels;
 
             dmList = Object.values(channels).map((channel) => {
+                if (!["Mike", 'Joe', 'Emily', 'Steven'].includes(channel.title)) return;
                 return (
                     <DmIndexItem
                         key={channel.id}
@@ -139,6 +155,13 @@ class ChannelIndex extends React.Component {
                             onClick={this.toggleDmForm}
                         />
                         </Link>
+                        {/* <Link className="create-link" to="/main/channels/create">
+                        <img
+                            className="create-button"
+                            src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"
+                            onClick={this.toggleDmForm}
+                        />
+                        </Link> */}
                         {/* <img
                             className="dm-button"
                             src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"

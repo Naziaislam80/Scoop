@@ -211,7 +211,13 @@
 #selected{
     background-color: #350D36;
 }
+.channelname-li:hover{
+    background: #350D36;
+}
 
+.channelli-outer:hover{
+    background: #350D36
+}
 /* #selected #x-Btn{
    display: flex;
 } */

@@ -69,6 +69,15 @@ class Dashboard extends React.Component {
     }
 
     render() {
+        // if (this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows) {
+        //     return (<div className="search-browse" />)
+        // }
+        // if (!this.mounted) {
+        //     return (<div className="search-browse" />)
+        // }
+
+        // const randomShow = this.props.shows[Object.keys(this.props.shows)[Math.floor(Math.random() * Object.keys(this.props.shows).length)]];
+
         const { logout } = this.props;
         return (
             <div className="dashboard">
