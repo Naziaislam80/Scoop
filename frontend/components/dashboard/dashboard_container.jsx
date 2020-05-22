@@ -5,12 +5,26 @@ import { logout } from '../../actions/session_actions';
 
 
 const msp = () => {
-    return { stuff: "stuff" }
+    return { 
+        stuff: "stuff" 
+    }
 }
 
 const mdp = dispatch => {
     return {
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        // fetchChannel: (id) => dispatch(fetchChannel(id)),
+        // fetchChannels: () => dispatch(fetchChannels()),
+
+        // fetchChannelMessages: (channelId) => {
+        //     return (dispatch(fetchChannelMessages(channelId)))
+        // },
+        // receiveMessage: (message) => {
+        //     return (dispatch(receiveMessage(message)))
+        // },
+        // receiveMessages: (message) => {
+        //     return (dispatch(receiveMessages(message)))
+        // }
     }
 }
 

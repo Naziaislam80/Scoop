@@ -1012,9 +1012,14 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(ChannelIndex);
 
   function ChannelIndex(props) {
+    var _this;
+
     _classCallCheck(this, ChannelIndex);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.getGeneralId = _this.getGeneralId.bind(_assertThisInitialized(_this));
+    _this.deleteChannel = _this.deleteChannel.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(ChannelIndex, [{
@@ -1051,17 +1056,34 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "deleteChannel",
     value: function deleteChannel(channelId) {
+      var _this2 = this;
+
       var destroyC = this.props.destroyChannel;
       return function (e) {
-        e.preventDefault();
-        destroyC(channelId);
+        e.preventDefault(); // debugger
+
+        var id = _this2.getGeneralId();
+
+        destroyC(channelId).then(function (res) {
+          return _this2.props.history.push("/main/channels/".concat(id));
+        });
       };
+    }
+  }, {
+    key: "getGeneralId",
+    value: function getGeneralId() {
+      var generalId = null;
+      Object.values(this.props.channels).forEach(function (l) {
+        if (l.title === "General") generalId = l.id;
+      });
+      return generalId;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this3 = this;
 
+      // debugger
       var channels = [];
       var channelList;
       var dmList;
@@ -1076,20 +1098,24 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
               key: channel.id,
               channelId: channel.id,
               channel: channel,
-              currentUser: _this.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
+              currentUser: _this3.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
 
             });
           }
 
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "test3"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: channel.id,
             channelId: channel.id,
             channel: channel,
-            currentUser: _this.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
+            currentUser: _this3.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
 
-          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "test4"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             id: "x-Btn",
-            onClick: _this.deleteChannel(channel.id)
+            onClick: _this3.deleteChannel(channel.id)
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: "https://image.flaticon.com/icons/png/512/1617/1617296.png",
             className: "thread-img"
@@ -1104,8 +1130,8 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dm_index_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
             key: channel.id,
             channel: channel,
-            currentUser: _this.props.currentUser,
-            deleteChannel: _this.props.destroyChannel
+            currentUser: _this3.props.currentUser,
+            deleteChannel: _this3.props.destroyChannel
           });
         });
       }
@@ -1737,7 +1763,18 @@ var mdp = function mdp(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
-    }
+    } // fetchChannel: (id) => dispatch(fetchChannel(id)),
+    // fetchChannels: () => dispatch(fetchChannels()),
+    // fetchChannelMessages: (channelId) => {
+    //     return (dispatch(fetchChannelMessages(channelId)))
+    // },
+    // receiveMessage: (message) => {
+    //     return (dispatch(receiveMessage(message)))
+    // },
+    // receiveMessages: (message) => {
+    //     return (dispatch(receiveMessages(message)))
+    // }
+
   };
 };
 

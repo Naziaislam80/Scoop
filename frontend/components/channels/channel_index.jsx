@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 class ChannelIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.getGeneralId = this.getGeneralId.bind(this);
+        this.deleteChannel = this.deleteChannel.bind(this);
     }
 
     componentDidMount() {
@@ -39,11 +41,20 @@ class ChannelIndex extends React.Component {
     deleteChannel(channelId) {
        const destroyC = this.props.destroyChannel
        return (e => {
-        e.preventDefault() 
-        destroyC(channelId)
+        e.preventDefault()
+        // debugger
+        let id = this.getGeneralId()
+        destroyC(channelId).then(res => this.props.history.push(`/main/channels/${id}`))
        })
     }
+    getGeneralId() {
+        let generalId = null;
+
+        Object.values(this.props.channels).forEach(l => { if (l.title === "General") generalId = l.id })
+        return generalId;
+    }
     render() {
+        // debugger
         let channels = [];
         let channelList;
         let dmList;
@@ -69,7 +80,7 @@ class ChannelIndex extends React.Component {
                     )
                 }
                 return (
-                    <>
+                    <div className="test3">
 
                     <ChannelIndexItem
                         key={channel.id}
@@ -80,7 +91,7 @@ class ChannelIndex extends React.Component {
                         
                         // deleteChannel={this.props.destroyChannel(channel.id)}
                     />
-                    <div>
+                    <div className="test4">
                             <button id="x-Btn" onClick={this.deleteChannel(channel.id)}>
                                 <img
                                     src="https://image.flaticon.com/icons/png/512/1617/1617296.png"
@@ -88,7 +99,7 @@ class ChannelIndex extends React.Component {
                                 />
                             </button>
                     </div>
-                    </>
+                    </div>
                 );
             });
         }
