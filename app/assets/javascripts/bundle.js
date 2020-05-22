@@ -3226,18 +3226,18 @@ var SplashContainer = /*#__PURE__*/function (_React$Component) {
       }, "TRY DEMO"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
         className: "homepage-4-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https://github.com/Naziaislam80",
         className: "github-link",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://image.flaticon.com/icons/svg/2111/2111432.svg",
         className: "github-img"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https://naziaislam80.github.io/",
         className: "portfolio",
         target: "_blank"
       }, "About Me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https://www.linkedin.com/in/nazia-islam-2374951a9/",
         className: "linkedin-link",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

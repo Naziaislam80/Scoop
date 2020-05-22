@@ -154,7 +154,7 @@ class SplashContainer extends React.Component {
                 </div>
                 <footer className="homepage-4-div">
                     <a
-                        href=""
+                        href="https://github.com/Naziaislam80"
                         className="github-link"
                         target="_blank"
                     >
@@ -164,7 +164,7 @@ class SplashContainer extends React.Component {
                         />
                     </a>
                     <a
-                        href=""
+                        href="https://naziaislam80.github.io/"
                         className="portfolio"
                         target="_blank"
                     >
@@ -172,7 +172,7 @@ class SplashContainer extends React.Component {
                     </a>
 
                     <a
-                        href=""
+                        href="https://www.linkedin.com/in/nazia-islam-2374951a9/"
                         className="linkedin-link"
                         target="_blank"
                     >
