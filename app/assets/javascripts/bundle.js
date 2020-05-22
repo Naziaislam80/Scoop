@@ -1006,6 +1006,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var ChannelIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(ChannelIndex, _React$Component);
 
@@ -1180,7 +1181,7 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (ChannelIndex);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(ChannelIndex));
 
 /***/ }),
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndexItem from './channel_index_item';
 import DmIndexItem from './dm_index_item';
 import { Link } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 
 class ChannelIndex extends React.Component {
@@ -240,4 +241,4 @@ class ChannelIndex extends React.Component {
     }
 };
 
-export default ChannelIndex;
+export default withRouter(ChannelIndex);
