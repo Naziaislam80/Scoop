@@ -1020,6 +1020,9 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.getGeneralId = _this.getGeneralId.bind(_assertThisInitialized(_this));
     _this.deleteChannel = _this.deleteChannel.bind(_assertThisInitialized(_this));
+    _this.state = {
+      stuff: ""
+    };
     return _this;
   }
 
@@ -1066,7 +1069,11 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
         var id = _this2.getGeneralId();
 
         destroyC(channelId).then(function (res) {
-          return _this2.props.history.push("/main/channels/".concat(id));
+          _this2.setState({
+            stuff: "1"
+          });
+
+          _this2.props.history.push("/main/channels/".concat(id));
         });
       };
     }
@@ -1628,13 +1635,14 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       showDropdown: false,
       query: "",
-      isSearched: false,
-      result: []
+      isSearched: false // result: []
+
     };
     _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this)); // this.renderDropdown = this.renderDropdown.bind(this);
 
     _this.closeMenu = _this.closeMenu.bind(_assertThisInitialized(_this)); // this.handleLogout = this.handleLogout.bind(this);
 
+    _this.handleSelected = _this.handleSelected.bind(_assertThisInitialized(_this));
     _this.handleSearchChange = _this.handleSearchChange.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1681,50 +1689,99 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "handleSelected",
+    value: function handleSelected() {
+      if (this.state.query.length >= 1) this.setState({
+        query: ""
+      }); // e => e.target.classList.add(" selected-nav");
+    }
+  }, {
     key: "handleSearchChange",
     value: function handleSearchChange(e) {
       e.preventDefault();
       this.setState({
         query: e.currentTarget.value
-      });
+      }); // debugger
     }
   }, {
     key: "render",
     value: function render() {
-      // if (this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows) {
-      //     return (<div className="search-browse" />)
-      // }
-      // if (!this.mounted) {
-      //     return (<div className="search-browse" />)
-      // }
-      // const randomShow = this.props.shows[Object.keys(this.props.shows)[Math.floor(Math.random() * Object.keys(this.props.shows).length)]];
+      var _this4 = this;
+
+      var result = []; // debugger 
+
+      Object.values(this.props.channels).map(function (channel) {
+        if (channel.title.toLowerCase().includes(_this4.state.query.toLowerCase())) result.push(channel); // this.props.history.push(`/main/channels/${this.state.channel.id}`)
+      }); // debugger
+
       var logout = this.props.logout;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dashboard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://image.flaticon.com/icons/svg/465/465633.svg",
-        className: "search-img"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "searchdiv"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "searchPlaceholder"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text" // value="" 
-        // onChange={this.update("body")}
-        ,
-        placeholder: "Search Workspace",
-        className: "searchBox"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cog"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cog",
-        onClick: this.toggleDropdown
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://image.flaticon.com/icons/svg/2001/2001580.svg",
-        className: "cog-img"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "test1"
-      }, this.renderDropdown())));
+
+      if (this.state.query === "") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dashboard"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.flaticon.com/icons/svg/465/465633.svg",
+          className: "search-img"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "searchdiv"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "searchPlaceholder"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text" // value="" 
+          ,
+          onChange: this.handleSearchChange,
+          placeholder: "Search Workspace",
+          className: "searchBox"
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cog"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cog",
+          onClick: this.toggleDropdown
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.flaticon.com/icons/svg/2001/2001580.svg",
+          className: "cog-img"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "test1"
+        }, this.renderDropdown())));
+      }
+
+      if (this.state.query.length >= 1) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dashboard"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.flaticon.com/icons/svg/465/465633.svg",
+          className: "search-img"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "searchdiv"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "searchPlaceholder"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text" // value="" 
+          ,
+          onChange: this.handleSearchChange,
+          placeholder: "Search Workspace",
+          className: "searchBox"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "searchdrop"
+        }, result.map(function (ele) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "results"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/main/channels/".concat(ele.id),
+            onClick: _this4.handleSelected
+          }, ele.title));
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cog"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cog",
+          onClick: this.toggleDropdown
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.flaticon.com/icons/svg/2001/2001580.svg",
+          className: "cog-img"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "test1"
+        }, this.renderDropdown())));
+      }
     }
   }]);
 
@@ -1754,9 +1811,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var msp = function msp() {
+var msp = function msp(state) {
   return {
-    stuff: "stuff"
+    stuff: "stuff",
+    channels: state.entities.channels
   };
 };
 
@@ -1764,18 +1822,72 @@ var mdp = function mdp(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
-    } // fetchChannel: (id) => dispatch(fetchChannel(id)),
-    // fetchChannels: () => dispatch(fetchChannels()),
-    // fetchChannelMessages: (channelId) => {
-    //     return (dispatch(fetchChannelMessages(channelId)))
-    // },
-    // receiveMessage: (message) => {
-    //     return (dispatch(receiveMessage(message)))
-    // },
-    // receiveMessages: (message) => {
-    //     return (dispatch(receiveMessages(message)))
-    // }
+    },
+    fetchChannel: function (_fetchChannel) {
+      function fetchChannel(_x) {
+        return _fetchChannel.apply(this, arguments);
+      }
 
+      fetchChannel.toString = function () {
+        return _fetchChannel.toString();
+      };
+
+      return fetchChannel;
+    }(function (id) {
+      return dispatch(fetchChannel(id));
+    }),
+    fetchChannels: function (_fetchChannels) {
+      function fetchChannels() {
+        return _fetchChannels.apply(this, arguments);
+      }
+
+      fetchChannels.toString = function () {
+        return _fetchChannels.toString();
+      };
+
+      return fetchChannels;
+    }(function () {
+      return dispatch(fetchChannels());
+    }),
+    fetchChannelMessages: function (_fetchChannelMessages) {
+      function fetchChannelMessages(_x2) {
+        return _fetchChannelMessages.apply(this, arguments);
+      }
+
+      fetchChannelMessages.toString = function () {
+        return _fetchChannelMessages.toString();
+      };
+
+      return fetchChannelMessages;
+    }(function (channelId) {
+      return dispatch(fetchChannelMessages(channelId));
+    }),
+    receiveMessage: function (_receiveMessage) {
+      function receiveMessage(_x3) {
+        return _receiveMessage.apply(this, arguments);
+      }
+
+      receiveMessage.toString = function () {
+        return _receiveMessage.toString();
+      };
+
+      return receiveMessage;
+    }(function (message) {
+      return dispatch(receiveMessage(message));
+    }),
+    receiveMessages: function (_receiveMessages) {
+      function receiveMessages(_x4) {
+        return _receiveMessages.apply(this, arguments);
+      }
+
+      receiveMessages.toString = function () {
+        return _receiveMessages.toString();
+      };
+
+      return receiveMessages;
+    }(function (message) {
+      return dispatch(receiveMessages(message));
+    })
   };
 };
 

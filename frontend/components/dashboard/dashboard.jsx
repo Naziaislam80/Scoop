@@ -25,12 +25,13 @@ class Dashboard extends React.Component {
             showDropdown: false,
             query: "",
             isSearched: false,
-            result: []
+            // result: []
         }
         this.toggleDropdown = this.toggleDropdown.bind(this);
         // this.renderDropdown = this.renderDropdown.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         // this.handleLogout = this.handleLogout.bind(this);
+        this.handleSelected = this.handleSelected.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
@@ -62,55 +63,126 @@ class Dashboard extends React.Component {
             return null
         }
     }
-
+    handleSelected() {
+        if (this.state.query.length >= 1) this.setState({ query: "" });
+        // e => e.target.classList.add(" selected-nav");
+    }
     handleSearchChange(e) {
+        
         e.preventDefault();
         this.setState({ query: e.currentTarget.value })
+        // debugger
     }
 
     render() {
-        // if (this.props.genres.length === 0 || this.props.shows.length === 0 || !this.props.shows) {
-        //     return (<div className="search-browse" />)
-        // }
-        // if (!this.mounted) {
-        //     return (<div className="search-browse" />)
-        // }
+        let result = [];
+        // debugger 
+        Object.values(this.props.channels).map((channel) => {
+            if (channel.title.toLowerCase().includes(this.state.query.toLowerCase())) result.push(channel)
+            // this.props.history.push(`/main/channels/${this.state.channel.id}`)
 
-        // const randomShow = this.props.shows[Object.keys(this.props.shows)[Math.floor(Math.random() * Object.keys(this.props.shows).length)]];
+        })
+        // debugger
 
         const { logout } = this.props;
-        return (
-            <div className="dashboard">
+        if (this.state.query === "") {
+            return (
+                <div className="dashboard">
                     <img
                         src="https://image.flaticon.com/icons/svg/465/465633.svg"
                         className="search-img"
                     />
-                {/* <a href="https://naziaislam80.github.io/" class="search-img"> */}
-                <div className="searchdiv">
-                <form className="searchPlaceholder">
-                    <input
+                    {/* <a href="https://naziaislam80.github.io/" class="search-img"> */}
+                    <div className="searchdiv">
+                        <form className="searchPlaceholder">
+                            <input
+
+                                type="text"
+                                // value="" 
+                                onChange={this.handleSearchChange}
+                                placeholder="Search Workspace"
+                                className="searchBox"
+                            />
+                        </form>
+                        {/* </div>
+                        <div className="searchdrop">
+                            {result.map((ele) => {
+                                return (
+                                    <div className="results">
+                                        <Link to={`/main/channels/${ele.id}`}>
+                                            {ele.title}
+                                        </Link>
+
+                                    </div>
+                                )
+                            })}
+                        </div> */}
+                    </div>
+                    <div className="cog">
+                        <div className="cog" onClick={this.toggleDropdown}>
+                            <img
+                                src="https://image.flaticon.com/icons/svg/2001/2001580.svg"
+                                className="cog-img"
+                            />
+                        </div>
+                        <div className="test1">
+                            {this.renderDropdown()}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    
+
+        if (this.state.query.length >= 1) {
+          
+            return (
+                <div className="dashboard">
+                        <img
+                            src="https://image.flaticon.com/icons/svg/465/465633.svg"
+                            className="search-img"
+                        />
+                    {/* <a href="https://naziaislam80.github.io/" class="search-img"> */}
+                    <div className="searchdiv">
+                        <form className="searchPlaceholder">
+                            <input
                     
-                        type="text"
-                        // value="" 
-                        // onChange={this.update("body")}
-                        placeholder="Search Workspace"
-                        className="searchBox"
-                    />
-                </form>
-                </div>
-                <div className="cog">
-                    <div className="cog" onClick={this.toggleDropdown}>
-                    <img
-                        src="https://image.flaticon.com/icons/svg/2001/2001580.svg"
-                        className="cog-img"
-                    />
+                                type="text"
+                                // value="" 
+                                onChange={this.handleSearchChange}
+                                placeholder="Search Workspace"
+                                className="searchBox"
+                            />
+                        </form>
+                        {/* </div> */}
+                        <div className="searchdrop">
+                            {result.map((ele) => {
+                                return (
+                                <div className="results">
+                                        <Link to={`/main/channels/${ele.id}`} onClick={this.handleSelected}>
+                                            
+                                            {ele.title}
+                                        </Link>
+                                    
+                                </div>
+                                )
+                            })}
+                        </div>
+                    </div>   
+                    <div className="cog">
+                        <div className="cog" onClick={this.toggleDropdown}>
+                        <img
+                            src="https://image.flaticon.com/icons/svg/2001/2001580.svg"
+                            className="cog-img"
+                        />
+                        </div>
+                        <div className="test1">
+                            {this.renderDropdown()}
+                        </div>
                     </div>
-                    <div className="test1">
-                        {this.renderDropdown()}
-                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

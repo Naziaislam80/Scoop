@@ -1,0 +1,23 @@
+.searchdrop {
+display: flex;
+  justify-content: center;
+  align-content: space-between;
+box-sizing: border-box;
+  border: solid #350d36;
+  top: 400px;
+position: absolute;
+color: black;
+ 
+}
+
+.searchdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    font-size: 50px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}

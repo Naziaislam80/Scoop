@@ -10,6 +10,9 @@ class ChannelIndex extends React.Component {
         super(props);
         this.getGeneralId = this.getGeneralId.bind(this);
         this.deleteChannel = this.deleteChannel.bind(this);
+        this.state = {
+            stuff: ""
+        }
     }
 
     componentDidMount() {
@@ -45,8 +48,13 @@ class ChannelIndex extends React.Component {
         e.preventDefault()
         // debugger
         let id = this.getGeneralId()
-        destroyC(channelId).then(res => this.props.history.push(`/main/channels/${id}`))
-       })
+        destroyC(channelId).then(res => {
+            this.setState({
+                stuff: "1"
+            })
+            this.props.history.push(`/main/channels/${id}`)
+        })
+    })
     }
     getGeneralId() {
         let generalId = null;
