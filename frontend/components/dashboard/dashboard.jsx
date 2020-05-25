@@ -160,8 +160,10 @@ class Dashboard extends React.Component {
                                 return (
                                 <div className="results">
                                         <Link to={`/main/channels/${ele.id}`} onClick={this.handleSelected}>
+                                            <div className="titlelist">
                                             
                                             {ele.title}
+                                            </div>
                                         </Link>
                                     
                                 </div>

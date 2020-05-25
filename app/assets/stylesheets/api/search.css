@@ -4,9 +4,16 @@ display: flex;
   align-content: space-between;
 box-sizing: border-box;
   border: solid #350d36;
-  top: 400px;
+  top: 40px;
 position: absolute;
-color: black;
+/* font-weight: bold; */
+color: #350d36;
+background-color: lightcyan;
+margin-left: 40px;
+    margin-right: 420px;
+    max-width: 3000px;
+max-height: 7000px;
+/* width: 160px; */
  
 }
 
@@ -16,8 +23,13 @@ color: black;
 }
 
 .results {
-    font-size: 50px;
-    z-index: 100;
+    font-size: 20px;
+    /* z-index: 100; */
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.titlelist {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
