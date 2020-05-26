@@ -1,5 +1,6 @@
 .searchdrop {
 display: flex;
+ flex-direction: column;
   justify-content: center;
   align-content: space-between;
 box-sizing: border-box;
@@ -11,7 +12,7 @@ color: #350d36;
 background-color: lightcyan;
 margin-left: 40px;
     margin-right: 420px;
-    max-width: 3000px;
+   width: 450px;
 max-height: 7000px;
 /* width: 160px; */
  
@@ -25,11 +26,13 @@ max-height: 7000px;
 .results {
     font-size: 20px;
     /* z-index: 100; */
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    justify-content: center;
+     width: 450px;
 }
 
 .titlelist {
     display: flex;
-    flex-direction: column; 
+    justify-content: center;
+    width: 450px;
 }
