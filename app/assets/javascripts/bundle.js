@@ -1021,7 +1021,8 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
     _this.getGeneralId = _this.getGeneralId.bind(_assertThisInitialized(_this));
     _this.deleteChannel = _this.deleteChannel.bind(_assertThisInitialized(_this));
     _this.state = {
-      stuff: ""
+      // stuff: ""
+      stuff: 0
     };
     return _this;
   }
@@ -1069,11 +1070,14 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
         var id = _this2.getGeneralId();
 
         destroyC(channelId).then(function (res) {
-          _this2.setState({
-            stuff: "1"
-          });
-
           _this2.props.history.push("/main/channels/".concat(id));
+        }).then(function () {
+          // this.setState({
+          //     // stuff: "1"
+          //     stuff: stuff += 1
+          // })
+          // console.log(this.props.history)
+          _this2.props.fetchUserChannels(_this2.props.currentUser.id);
         });
       };
     }
