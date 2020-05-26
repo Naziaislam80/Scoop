@@ -1,4 +1,4 @@
-<img width="194" alt="Screen Shot 2020-05-25 at 8 17 55 PM" src="https://user-images.githubusercontent.com/55370959/82849222-e91d1f80-9ec4-11ea-9bdd-73cd1f37818f.png">
+<img width="300" alt="Screen Shot 2020-05-25 at 8 17 55 PM" src="https://user-images.githubusercontent.com/55370959/82849222-e91d1f80-9ec4-11ea-9bdd-73cd1f37818f.png">
 
 Scoop is a web app inspired by Slack. It is a messaging application that is designed to be a company's primary method of communication. It allows users to organize their messages via channels and direct messages.
 
