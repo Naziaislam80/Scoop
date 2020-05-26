@@ -52,11 +52,10 @@ ch4 = Channel.create!(title: 'friends', work_space_id: ws4.id)
 ch5 = Channel.create!(title: 'circle', work_space_id: ws5.id)
 ch6 = Channel.create!(title: 'Jokes', work_space_id: ws6.id)
 ch7 = Channel.create!(title: 'Steven is the best', work_space_id: ws7.id)
-ch8 = Channel.create!(title: 'Random', work_space_id: ws8.id)
-ch9 = Channel.create!(title: 'Mike', work_space_id: ws9.id)
-ch10 = Channel.create!(title: 'Joe', work_space_id: ws10.id)
-ch11 = Channel.create!(title: 'Emily', work_space_id: ws11.id)
-ch12 = Channel.create!(title: 'Steven', work_space_id: ws12.id)
+ch8 = Channel.create!(title: 'Mike', work_space_id: ws9.id)
+ch9 = Channel.create!(title: 'Joe', work_space_id: ws10.id)
+ch10 = Channel.create!(title: 'Emily', work_space_id: ws11.id)
+ch11 = Channel.create!(title: 'Steven', work_space_id: ws12.id)
 
 
 
