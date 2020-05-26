@@ -7,17 +7,23 @@ Scoop is a web app inspired by Slack. It is a messaging application that is desi
 ## Features
 
 ### Overview:
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/55370959/82958994-bfc3c880-9f84-11ea-9eab-efd571d5cf9c.gif)
 
 ### Live Chat:
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/55370959/82959343-7a53cb00-9f85-11ea-8ba3-2c96d121a949.gif)
 
 ### Search:
-Users are able to search for channels/ existing direct messages
+Users are able to search for channels/ existing direct messages.
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/55370959/82959442-b5ee9500-9f85-11ea-8cd1-2270fec0dfc2.gif)
 
 ### Channels:
-Users are able to create/delete channels and view the messages within that channel
+Users are able to create/delete channels and view the messages within that channel.
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/55370959/82958430-5becd000-9f83-11ea-8009-2818badcc042.gif)
+
 
 ### Direct Messages:
-Users are able to send DMs 
+Users are able to send direct messages. 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/55370959/82959197-22b55f80-9f85-11ea-90b9-c10570e6bffa.gif)
 
 ## Technologies
 * HTML
