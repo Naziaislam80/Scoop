@@ -36,10 +36,10 @@ class SplashContainer extends React.Component {
                 <ul className="homepage-link">
                     <Link className="try-scoop-link" to="/signup">
                         TRY SCOOP
-                </Link>
-                    <a className="try-demo-link" onClick={this.loginDemo}>
+                    </Link>
+                    <Link className="try-demo-link" to="/login">
                         TRY DEMO
-                    </a>
+                    </Link>
                 </ul>
                     <span className="already">Need to create a workspace? <Link className="already-link" to='/login'>Get started</Link>.</span>
             </div>
@@ -144,12 +144,15 @@ class SplashContainer extends React.Component {
                         <Link className="try-s-link-bottom" to="/signup">
                             TRY SCOOP
                         </Link>
-                        <a
+                        <Link className="try-demo-link-bottom" to="/login">
+                            TRY DEMO
+                        </Link>
+                        {/* <a
                             className="try-demo-link-bottom"
                             onClick={this.loginDemo}
                         >
                             TRY DEMO
-                        </a>
+                        </a> */}
                     </ul>
                 </div>
                 <footer className="homepage-4-div">
