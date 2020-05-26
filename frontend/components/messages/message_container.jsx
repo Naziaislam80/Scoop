@@ -9,6 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     // debugger;
     return {
         // users: state.entities.users,
+        currentChannelId: ownProps.match.params.channelId,
+
         user: state.entities.users[ownProps.message.user_id],
     };
 };

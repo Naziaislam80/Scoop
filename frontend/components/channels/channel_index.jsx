@@ -86,6 +86,7 @@ class ChannelIndex extends React.Component {
                         <ChannelIndexItem
                             key={channel.id}
                             channelId={channel.id}
+                            fetchUserChannels={this.props.fetchUserChannels}
 
                             channel={channel}
                             currentUser={this.props.currentUser}
@@ -101,7 +102,7 @@ class ChannelIndex extends React.Component {
                     <ChannelIndexItem
                         key={channel.id}
                         channelId={channel.id}
-            
+                        fetchUserChannels={this.props.fetchUserChannels}
                         channel={channel}
                         currentUser={this.props.currentUser}
                         

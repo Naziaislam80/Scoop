@@ -37,7 +37,7 @@ class Channel extends React.Component {
            
             {
                 received: data => {
-                    debugger
+                    // debugger
                     switch (data.type) {
                         case "message":
                             receiveMessage(data.message); 
@@ -60,6 +60,8 @@ class Channel extends React.Component {
     componentDidMount() {
     //   debugger
       const { channelId } = this.props;
+        // this.getCurrentChannel(this.channelId);
+
       
     //   this.props.fetchChannels()
     //   debugger
@@ -88,6 +90,8 @@ class Channel extends React.Component {
 
     componentDidUpdate(prevProps) {
         const stuff = this.props.match.params.channelId;
+        // let test5 = this.props.fetchChannelMessages(this.state.channel_id);
+
         if (this.bottom.current) {
             this.bottom.current.scrollIntoView();
         }
@@ -169,7 +173,8 @@ class Channel extends React.Component {
                     </div>
                 </div>
          
-            <div className="messageandform-div">
+            <div className="messageandform-div" >
+
                 <ul className="whole-messagelist">{messageList}</ul>
                     <div ref={this.bottom}></div>
             </div>

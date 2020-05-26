@@ -570,8 +570,7 @@ var Channel = /*#__PURE__*/function (_React$Component) {
         id: "".concat(channelId)
       }, {
         received: function received(data) {
-          debugger;
-
+          // debugger
           switch (data.type) {
             case "message":
               receiveMessage(data.message);
@@ -596,7 +595,8 @@ var Channel = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       //   debugger
-      var channelId = this.props.channelId; //   this.props.fetchChannels()
+      var channelId = this.props.channelId; // this.getCurrentChannel(this.channelId);
+      //   this.props.fetchChannels()
       //   debugger
       // this.state.currentChannel = this.props.channel[0];
       // debugger
@@ -619,7 +619,7 @@ var Channel = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps) {
       var _this3 = this;
 
-      var stuff = this.props.match.params.channelId;
+      var stuff = this.props.match.params.channelId; // let test5 = this.props.fetchChannelMessages(this.state.channel_id);
 
       if (this.bottom.current) {
         this.bottom.current.scrollIntoView();
@@ -1109,6 +1109,7 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
             return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
               key: channel.id,
               channelId: channel.id,
+              fetchUserChannels: _this3.props.fetchUserChannels,
               channel: channel,
               currentUser: _this3.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
 
@@ -1120,6 +1121,7 @@ var ChannelIndex = /*#__PURE__*/function (_React$Component) {
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_channel_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: channel.id,
             channelId: channel.id,
+            fetchUserChannels: _this3.props.fetchUserChannels,
             channel: channel,
             currentUser: _this3.props.currentUser // deleteChannel={this.props.destroyChannel(channel.id)}
 
@@ -1317,7 +1319,12 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
       channel: _this.props.channel
     };
     return _this;
-  }
+  } // componentDidMount() {
+  //     // fetchUserChannels
+  //     this.props.fetchUserChannels(this.props.currentUser.id);
+  //     // console.log(this.props);
+  // }
+
 
   _createClass(ChannelIndexItem, [{
     key: "toggleSelect",
@@ -1327,8 +1334,11 @@ var ChannelIndexItem = /*#__PURE__*/function (_React$Component) {
       selected.setAttribute("id", "selected");
 
       if (this.state.channel.id !== this.props.match.params.channelId) {
-        this.props.history.push("/main/channels/".concat(this.state.channel.id)); // let btn = document.getElementById("x-Btn");
+        this.props.history.push("/main/channels/".concat(this.state.channel.id));
+        window.location.reload(); // let btn = document.getElementById("x-Btn");
         // btn.style.display = "flex";
+        // debugger
+        // this.props.fetchUserChannels(this.props.currentUser.id);
       } // this.props.fetchChannel(this.state.channel.id);
       // debugger
 
@@ -1490,6 +1500,7 @@ var DmIndexItem = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.channel.id !== this.props.match.params.channelId) {
         this.props.history.push("/main/channels/".concat(this.state.channel.id));
+        window.location.reload();
       }
     } // removeChannel(e) {
     //     e.preventDefault();
@@ -2025,6 +2036,9 @@ var Message = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.bottom = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.state = {
+      channel_id: _this.props.currentChannelId
+    };
     return _this;
   }
 
@@ -2032,8 +2046,8 @@ var Message = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       // debugger
-      if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-        this.props.fetchChannelMessages(this.props.match.params.channelId).then(function () {// debugger;
+      if (prevProps.match.params.channelId !== this.state.channel_id) {
+        this.props.fetchChannelMessages(this.state.channel_id).then(function () {// debugger;
           // this.props.fetchUsers();
         }).then(function () {});
         window.location.reload();
@@ -2100,6 +2114,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   // debugger;
   return {
     // users: state.entities.users,
+    currentChannelId: ownProps.match.params.channelId,
     user: state.entities.users[ownProps.message.user_id]
   };
 };
@@ -2181,6 +2196,7 @@ var MessageForm = /*#__PURE__*/function (_React$Component) {
       channel_id: _this.props.currentChannelId,
       user_id: _this.props.currentUser.id
     };
+    _this.currentChannel = "";
     _this.handleKeyPress = _this.handleKeyPress.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2196,6 +2212,11 @@ var MessageForm = /*#__PURE__*/function (_React$Component) {
       };
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.currentChannel = this.props.currentChannelId;
+    }
+  }, {
     key: "handleKeyPress",
     value: function handleKeyPress(e) {
       var _this3 = this;
@@ -2206,10 +2227,11 @@ var MessageForm = /*#__PURE__*/function (_React$Component) {
       // App.currentChannel({ message: this.state.body });
       // this.setState({ body: "" });
       if (e.key === "Enter") {
-        // debugger
+        // debugger 
         this.props.createMessage(this.state).then(function () {
           return _this3.setState({
-            body: ""
+            body: "",
+            channel_id: _this3.currentChannel
           });
         });
       }

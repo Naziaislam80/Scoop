@@ -12,9 +12,18 @@ class ChannelIndexItem extends React.Component {
         // this.removeChannel = this.removeChannel.bind(this);
         // this.openForm = this.openForm.bind(this);
         // this.noForm = this.noForm.bind(this);
-        this.state = { channel: this.props.channel };
+        this.state = { 
+            channel: this.props.channel
+            
+        };
         
     }
+    // componentDidMount() {
+    //     // fetchUserChannels
+    //     this.props.fetchUserChannels(this.props.currentUser.id);
+    //     // console.log(this.props);
+
+    // }
 
     toggleSelect() {
         // debugger
@@ -22,9 +31,13 @@ class ChannelIndexItem extends React.Component {
         selected.setAttribute("id", "selected");
         if (this.state.channel.id !== this.props.match.params.channelId) {
             this.props.history.push(`/main/channels/${this.state.channel.id}`)
+            window.location.reload();
             // let btn = document.getElementById("x-Btn");
             // btn.style.display = "flex";
+            // debugger
+            // this.props.fetchUserChannels(this.props.currentUser.id);
         }
+        
         // this.props.fetchChannel(this.state.channel.id);
         // debugger
     }

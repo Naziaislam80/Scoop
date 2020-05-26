@@ -16,6 +16,7 @@ class DmIndexItem extends React.Component {
         selected.setAttribute("id", "selected");
         if (this.state.channel.id !== this.props.match.params.channelId) {
             this.props.history.push(`/main/channels/${this.state.channel.id}`)
+            window.location.reload();
         }
     }
 

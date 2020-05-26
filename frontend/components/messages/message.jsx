@@ -4,13 +4,16 @@ import { FaUser } from "react-icons/fa";
 class Message extends React.Component {
     constructor(props) {
         super(props);
+
         this.bottom = React.createRef();
+        this.state = { channel_id: this.props.currentChannelId };
+
     }
 
     componentDidUpdate(prevProps) {
         // debugger
-        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-            this.props.fetchChannelMessages(this.props.match.params.channelId)
+        if (prevProps.match.params.channelId !== this.state.channel_id) {
+            this.props.fetchChannelMessages(this.state.channel_id)
                 .then(() => {
                     // debugger;
                     // this.props.fetchUsers();

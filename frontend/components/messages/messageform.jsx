@@ -4,6 +4,7 @@ class MessageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { body: "", channel_id: this.props.currentChannelId, user_id: this.props.currentUser.id};
+        this.currentChannel = "";
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
@@ -11,6 +12,10 @@ class MessageForm extends React.Component {
         // debugger
         return e =>
             this.setState({ [field]: e.currentTarget.value });
+    }
+
+    componentDidMount() {
+        this.currentChannel = this.props.currentChannelId
     }
     
     handleKeyPress(e) {
@@ -20,9 +25,9 @@ class MessageForm extends React.Component {
         // App.currentChannel({ message: this.state.body });
         // this.setState({ body: "" });
         if (e.key === "Enter") {
-            // debugger
+            // debugger 
             this.props.createMessage(this.state)
-            .then(() => this.setState({ body: "" }));
+                .then(() => this.setState({ body: "", channel_id: this.currentChannel }));
         }
     }
 
