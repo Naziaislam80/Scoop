@@ -41,7 +41,6 @@ Users are able to send direct messages.
 Impelmented Action Cable to subscribe/boardcast message to a channel.
 ```
 getCurrentChannel(channelId) {
-    //debugger
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
@@ -51,7 +50,6 @@ getCurrentChannel(channelId) {
            
             {
                 received: data => {
-                    debugger
                     switch (data.type) {
                         case "message":
                             receiveMessage(data.message); 
