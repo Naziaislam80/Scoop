@@ -4,6 +4,8 @@
     <title>Scoop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+   
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -22,7 +24,10 @@
 
 
     </script>
-
+      <meta property='og:title' content="Scoop"/>
+      <meta property='og:image' content="<%= image_url('scoop.jpg') %>"/>
+      <meta property="og:description" content="Scoop is a single page full-stack messaging application that incorporates Ruby on Rails for the backend and React/ Redux for the frontend." />
+      <meta property='og:url' content="https://scoop-slack.herokuapp.com/#/" />
   </head>
 
   <body>
