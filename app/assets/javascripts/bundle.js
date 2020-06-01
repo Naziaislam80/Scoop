@@ -2234,6 +2234,7 @@ var MessageForm = /*#__PURE__*/function (_React$Component) {
             channel_id: _this3.currentChannel
           });
         });
+        window.location.reload();
       }
     }
   }, {

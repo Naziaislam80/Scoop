@@ -28,6 +28,7 @@ class MessageForm extends React.Component {
             // debugger 
             this.props.createMessage(this.state)
                 .then(() => this.setState({ body: "", channel_id: this.currentChannel }));
+            window.location.reload();
         }
     }
 
